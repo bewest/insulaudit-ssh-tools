@@ -6,7 +6,8 @@ print_sms | while read sms ; do
   if [[ -f new.config ]] ; then
     mv new.config good.config
     auditor=$(setup_session good.config)  # tell management to give us a port now!
-    forward_stick.sh $auditor > audit-ssh.config # write ssh config
-    ssh -F audit-ssh.config insulauditor
+    # auditor == "./ssh-audit-4142-D34DB33F.config
+    ssh -F $auditor auditor run_stick $auditor
+    # remote side has a login shell that only responds to "run_stick" and a few other commands, or run_stick is a command that takes the session "key"
   fi
 done
