@@ -1,0 +1,13 @@
+#!/bin/bash
+
+sms=${1}
+
+python decode_audit_sms.py ${sms}
+
+# something like
+# key=D34DB33F
+# manage=mevice://bewest.io:4142
+# or even medevice://D34DB33F@bewest.io:4142
+
+#####
+# EOF

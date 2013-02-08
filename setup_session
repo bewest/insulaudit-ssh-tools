@@ -1,0 +1,28 @@
+#!/bin/bash
+config=$1
+
+function print_ssh_config ( ) {
+host=${1-bewest.io}
+port=${2-4142}
+
+cat <<<EOT
+# fetch_config/validate_config/setup_session should result in an ssh config that looks like this
+Host auditor
+  Compression no
+  User insulaudit
+  Hostname $host
+  # stitch local socat port to remote port arranged in fetch_config/validate_config/setup_session
+  LocalForward $port localhost:$port
+  # point to a key
+  # IdentityFile $id_file
+  # depending on "login shell" may not be needed
+  # ProxyCommand ssh -p %p %h run_stick $key
+EOT
+}
+medevice=$(cat $config | grep medevice | cut -d'=' -f 1)
+eval $(url2bash.py $medevice)
+session="./medevice-$port-$user-ssh.config"
+print_ssh_config $host $port > $session
+echo $session
+#####
+# EOF

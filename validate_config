@@ -1,0 +1,7 @@
+#!/bin/bash
+valid_config=${1-new.config}
+# no-op for now
+cat - > $valid_config
+
+#####
+# EOF
