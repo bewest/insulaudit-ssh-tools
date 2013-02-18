@@ -80,7 +80,46 @@ So we are able to take initialize a specified shell session with our
 authenticated user.  All we need to do now is authorise some ports for
 auditing.
 
+Here's stack overflow on the subject:
+* [restricting access to git](http://superuser.com/questions/299927/can-you-specify-git-shell-in-ssh-authorized-keys-to-restrict-access-to-only-git)
+* [how gitolite uses ssh](http://sitaramc.github.com/gitolite/glssh.html)
 
+```
+restricting shell access/distinguishing one user from another
+
+The answer to the first question is the command= we talked about
+before. If you look in the authorized_keys file, you'll see entries
+like this (I chopped off the ends of course; they're pretty long
+lines):
+
+  command="[path]/gitolite-shell sitaram",[more options] ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA18S2t...
+  command="[path]/gitolite-shell usertwo",[more options] ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEArXtCT...
+First, it finds out which of the public keys in this file match the
+incoming login. That's crypto stuff, and I won't go into it. Once the
+match has been found, it will run the command given on that line;
+e.g., if I logged in, it would run [path]/gitolite-shell sitaram. So
+the first thing to note is that such users do not get "shell access",
+which is good!
+
+Before running the command, however, sshd sets up an environment
+variable called SSH_ORIGINAL_COMMAND which contains the actual git
+command that your workstation sent out. This is the command that would
+have run if you did not have the command= part in the authorised keys
+file.
+
+When gitolite-shell gets control, it looks at the first argument
+("sitaram", "usertwo", etc) to determine who you are. It then looks at
+the SSH_ORIGINAL_COMMAND variable to find out which repository you
+want to access, and whether you're reading or writing.
+
+Now that it has a user, repository, and access requested (read/write),
+gitolite looks at its config file, and either allows or rejects the
+request.
+
+But this cannot differentiate between different branches within a
+repo; that has to be done separately.
+
+```
 
 
 ## How to check in medical records using beaglebone
