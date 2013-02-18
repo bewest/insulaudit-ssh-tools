@@ -201,6 +201,7 @@ git checkout -b $BRANCH
 
 
 Given a port forward, we can set up a vmodem
+
 ```bash
 USER=$USER
 DEVICE=$BASE/devices/$USER-$KEY.ttyUSB
@@ -212,8 +213,24 @@ Then run insulaudit to audit some records from a medical device.
 ```bash
 VID=1111
 PID=2222
-tool="mini.py"
+guess=$(insulaudit guess --vid $VID --pid $PID)
+tool=${guess-"mini.py"}
 OUTPUT=$WORK/insulaudit-$(date +%F).log
 $tool $DEVICE > $OUTPUT
+```
+
+Then wrap it up, and send the phr back from whence it came.
+```bash
+cd $WORK
+summarize_audit $OUTPUT > summary.log
+make_manifest $USER $SESSION . > manifest.phr
+git add .
+git commit -F summary.log
+git push origin $BRANCH
+```
+
+Hmm, kill socat?
+```bash
+rm $DEVICE
 ```
 
