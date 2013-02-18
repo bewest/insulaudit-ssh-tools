@@ -24,7 +24,6 @@ beagle bone key to our `authorized_keys_` file
 For example,
 ```
 command="FOO=BAR /home/insulaudit/bin/do_audit_for.sh bewest" ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDSZh82PI+uQe62fNvmqNNdB6mpPjJfpoPlxt515PVKjUpE49YQUXpdkbOYNHGtT5cRWdvEBJ7zVyJt0Iiy2cUVZjO2dgd/+iKwTNbFXvk9WyKP/MRwij3AHrf+nMMg9csz0qQ5JwRqBktjOuf3Vxkrf/bkUROxnvj1CU3SDNe7NUx7aGF/awwnQ19vzS/T6oCUct+ivGNWX+ZBLVLeWzPxm4T88Lw6v/ASWeHRydVtEoAOj66F1EP1R429EwBnasZi1a6sqeh3H8wNtqysaN4ultrOPsQldENKOTApZbjtAEL5u03m+/gRxu0PGymDhUFSn08ruwB8qxAedwfS4D9P bewest@ip-10-170-185-103
-
 ```
 This entry prevents `bash` or `sh` from running.  Usually what happens
 is ssh will start bash as the new user.
@@ -46,7 +45,6 @@ PWD=/home/insulaudit
 SSH_CONNECTION=24.5.43.241 53043 10.170.185.103 22
 /bin/sh
 bewest@paragon:~/src$ 
-
 ```
 
 With the above entry in authorized_keys:
@@ -118,9 +116,31 @@ request.
 
 But this cannot differentiate between different branches within a
 repo; that has to be done separately.
-
 ```
 
+## Updating authorized keys
+https://github.com/sitaramc/gitolite/blob/master/src/triggers/post-compile/ssh-authkeys
+Looks like @sitaramc tries very hard to keep duplicate entries out,
+and to keep the "curated" list separate from any manually added
+entries.
+
+## gitolite
+
+You can emulate
+[gitolite-shell](https://github.com/sitaramc/gitolite/blob/master/src/gitolite-shell)
+manually by doing something like like this
+`SSH_ORIGINAL_COMMAND="$action" gitolite-shell bewest`
+This actually runs as user git, but gitolite knows to set up all
+following commands as the "bewest" user.  It looks in it's config
+files for all needed information at this point, although it can
+interact with some out of band service as well.
+
+Action here is something like "upload, recieve, etc...." 
+
+
+## git hacks
+This one is interesting:
+https://github.com/progrium/gitreceive/blob/master/gitreceive
 
 ## How to check in medical records using beaglebone
 
@@ -140,4 +160,60 @@ These steps are a suggestion on how to generate a "valid config" given an SMS, a
 
 Assume this config:
 
+```
+[deviceDetect]
+vid=1111
+pid=2222
+
+[resourceRequest]
+addr=bewest.io
+port=80
+audit=medevice://YmV3@bewest.io:9001/insulauditpage=audit.php
+userid=bew
+key_loc=12739022
+
+[serialToNet]
+addr=bewest.io
+port=9001
+
+[registration]
+addr=bewest.io
+pollinginterval=300
+phr=git@github.com:bewest/diabetes-phr.git
+firstname=Ben
+lastname=West
+```
+
+So now that do_audit_for knows to set up a user, it needs to set up a
+new work area.
+```bash
+BASE=/home/insulaudit/
+USER=bewest
+KEY=12739022 # some unique key
+WORK=$BASE/$USER-$KEY
+mkdir -p $WORK
+PHR_REMOTE=git@github.com:bewest/diabetes.git
+git clone $PHR_REMOTE $WORK
+cd $WORK
+BRANCH="audit-$KEY"
+git checkout -b $BRANCH
+```
+
+
+Given a port forward, we can set up a vmodem
+```bash
+USER=$USER
+DEVICE=$BASE/devices/$USER-$KEY.ttyUSB
+PORT=9001
+socat pty,link=$DEVICE,b9600,raw TCP-L:$PORT
+```
+
+Then run insulaudit to audit some records from a medical device.
+```bash
+VID=1111
+PID=2222
+tool="mini.py"
+OUTPUT=$WORK/insulaudit-$(date +%F).log
+$tool $DEVICE > $OUTPUT
+```
 
