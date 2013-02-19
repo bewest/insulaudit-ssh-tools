@@ -229,8 +229,10 @@ git commit -F summary.log
 git push origin $BRANCH
 ```
 
-Hmm, kill socat?
+Hmm, kill socat, clean up work??
 ```bash
+cd
 rm $DEVICE
+rm -Rf $WORK
 ```
 
