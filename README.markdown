@@ -232,7 +232,26 @@ git push origin $BRANCH
 Hmm, kill socat, clean up work??
 ```bash
 cd
+# we hope this kills socat on both remote and local side
 rm $DEVICE
 rm -Rf $WORK
 ```
 
+
+
+This ssh config allows ssh command like:
+`ssh insulaudit`
+```config
+Host insulaudit
+
+  Compression no
+  User insulaudit
+  Hostname bewest.io
+  IdentityFile /home/bewest/.ssh/insulaudit.key
+  # LocalForward 4142 localhost:4142  # eg $port
+
+```
+We use something like this from the beaglebone to connect to the
+server.  The idea is that socat has forwarded a pty to a TCP
+interface, and that ssh stitches the port onto a remote host where
+relevant services can make the best use of the connected device.
