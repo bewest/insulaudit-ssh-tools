@@ -1,3 +1,4 @@
+#!/bin/bash
 # part of insulaudit-ssh-tools
 
 echo $0

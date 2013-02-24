@@ -1,6 +1,9 @@
+#!/bin/bash
 # part of insulaudit-ssh-tools
 
 echo $0
+# rm -Rvf $WORK_BASE
+echo ?? rm $WORK_BASE
 
 #####
 # EOF

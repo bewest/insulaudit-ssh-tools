@@ -1,6 +1,13 @@
+#!/bin/bash
 # part of insulaudit-ssh-tools
 
 echo $0
+mkdir -p $WORK_BASE
+config_url="https://transactionalweb.com/cloud/configfile.html?s=${AUDIT_SESSION}&u=${AUDIT_UID}"
+echo $config_url
+mkdir -p $WORK_CONF
+
+curl -s $config_url > $WORK_CONF/audit.config
 
 #####
 # EOF
