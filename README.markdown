@@ -165,6 +165,7 @@ Action here is something like "upload, recieve, etc...."
 
 Some ideas on how to transition these scripts to be gitolite commands
 * `upload-helper []`
+
 * `burn-branch <branch-name> <helper>` - burn a branch into a repo using this idiom:
 ```bash
 git init new-content
@@ -185,6 +186,7 @@ git --git-dir rebase --onto audit-branch audit-branch..local/audit-branch
 git --git-dir push origin audit-branch
 # test -n $DEBUG && git --git-dir push -f origin audit-branch #???
 ```
+
 * `stitch-branch <onto> <branch-name> <helper>` - specify a domain specific
   helper to resolve differences in newly generated content (eg, for regular
   auditing, where conflicts can be regularly resolved automatically.)
