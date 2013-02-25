@@ -4,20 +4,17 @@
 This method automatically forwards serial device over ssh for one-time consumption.
 After resource is consumed once, all ports and sessions are closed cleanly.
 
-Here's example output with actual data:
-https://github.com/bewest/insulaudit-ssh-tools/blob/master/example.log
+* Here's [example output](https://github.com/bewest/insulaudit-ssh-tools/blob/master/example.log) with actual data
+* [forward remote beaglebone/remote socat via ssh](https://github.com/bewest/insulaudit-ssh-tools/blob/master/socat_forward_stick.sh)
 
-https://github.com/bewest/insulaudit-ssh-tools/blob/master/socat_forward_stick.sh - from beaglebone/remote socat and ssh end
-Uses a reverse port forward in order to get control sequence right, this is reverse of what we've been thinking, but somewhat trivial/technical difference.
+* [server side socat](https://github.com/bewest/insulaudit-ssh-tools/blob/master/create_vmodem)
+* [server side authorize port+shell+resource](https://github.com/bewest/insulaudit-ssh-tools/blob/master/do_audit_for.sh)
+* [auditing script](https://github.com/bewest/insulaudit-ssh-tools/blob/master/perform_audit)
 
-https://github.com/bewest/insulaudit-ssh-tools/blob/master/create_vmodem - server side socat
-https://github.com/bewest/insulaudit-ssh-tools/blob/master/do_audit_for.sh - server side authorize port+shell+resource
-https://github.com/bewest/insulaudit-ssh-tools/blob/master/perform_audit - auditing script
+* [medical records checked into git](https://github.com/bewest/diabetes/blob/audit/2013-02-25-6-403332564/incoming.log)
 
-https://github.com/bewest/diabetes/blob/audit/2013-02-25-6-403332564/incoming.log
-Here's the resulting checked-in log file.
-
-The resource can only be consumed once using this implementation; the whole pipeline is shut-down after a single open/close session on the virtual modem.
+The resource can only be consumed once using this implementation; the whole
+pipeline is shut-down after a single open/close session on the virtual modem.
 
 ## Details
 See:
