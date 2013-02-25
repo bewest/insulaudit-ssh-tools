@@ -1,5 +1,6 @@
 #!/bin/bash
 # part of insulaudit-ssh-tools
+. common
 
 echo $0
 # rm -Rvf $WORK_BASE
@@ -11,6 +12,7 @@ fi
 email="$(read_config registration.email bewest+insulaudit@gmail.com)"
 first="$(read_config registration.firstname insulaudit)"
 last="$(read_config registration.lastname helper)"
+export email first last
 ( cd $WORK_LOCAL
   git config user.email "$email"
   git config user.name "$first $last"
