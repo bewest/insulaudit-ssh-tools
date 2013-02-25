@@ -1,7 +1,7 @@
 
 /usr/bin/socat -d -d  tcp-l:9001,reuseaddr FILE:/dev/ttyUSB0,nonblock,b9600,raw
 now run ssh -L 9001:localhost:9001 bewest.io
-2013/02/25 00:14:30 socat[55421] N listening on AF=2 0.0.0.0:9001
+2013/02/25 00:26:48 socat[55498] N listening on AF=2 0.0.0.0:9001
 $0: /home/insulaudit/bin/do_audit_for.sh
 tool: audit
 session: 403332564
@@ -12,8 +12,8 @@ SHELL=/bin/sh
 TERM=screen-256color-bce
 BASE=/home/insulaudit/session
 FOO=BAR
-SSH_CLIENT=24.5.43.241 36969 22
-PHR_REPO=git@github.com:bewest/diabetes.git
+SSH_CLIENT=24.5.43.241 36983 22
+PHR_REPO=
 WORK_REMOTE=/home/insulaudit/sessions/6-403332564/remote.git
 WORK_CONF=/home/insulaudit/sessions/6-403332564/conf
 SSH_TTY=/dev/pts/18
@@ -21,7 +21,7 @@ WORK_LOCAL=/home/insulaudit/sessions/6-403332564/local
 BRANCH=audit/2013-02-25-6-403332564
 AUDIT_USER=bewest
 USER=insulaudit
-SSH_AUTH_SOCK=/tmp/ssh-EPbIXI6772/agent.6772
+SSH_AUTH_SOCK=/tmp/ssh-vgDWlg8954/agent.8954
 SESSION_CONFIG=/home/insulaudit/sessions/6-403332564/conf/audit.config
 PATH=/home/insulaudit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 MAIL=/var/mail/insulaudit
@@ -30,7 +30,7 @@ LANG=en_US.UTF-8
 SHLVL=1
 HOME=/home/insulaudit
 LOGNAME=insulaudit
-SSH_CONNECTION=24.5.43.241 36969 10.170.185.103 22
+SSH_CONNECTION=24.5.43.241 36983 10.170.185.103 22
 AUDIT_UID=6
 WORK_BASE=/home/insulaudit/sessions/6-403332564
 SESS_KEY=6-403332564
@@ -53,26 +53,33 @@ keys:
 git@github.com:bewest/diabetes.git
 /home/insulaudit/sessions/6-403332564/remote.git
 /home/insulaudit/sessions/6-403332564/local
-fatal: destination path '/home/insulaudit/sessions/6-403332564/local' already exists and is not an empty directory.
-fatal: A branch named 'audit/2013-02-25-6-403332564' already exists.
-Already on 'audit/2013-02-25-6-403332564'
+Cloning into '/home/insulaudit/sessions/6-403332564/local'...
+remote: Counting objects: 1239, done.[K
+remote: Compressing objects:   0% (1/864)   [Kremote: Compressing objects:   1% (9/864)   [Kremote: Compressing objects:   2% (18/864)   [Kremote: Compressing objects:   3% (26/864)   [Kremote: Compressing objects:   4% (35/864)   [Kremote: Compressing objects:   5% (44/864)   [Kremote: Compressing objects:   6% (52/864)   [Kremote: Compressing objects:   7% (61/864)   [Kremote: Compressing objects:   8% (70/864)   [Kremote: Compressing objects:   9% (78/864)   [Kremote: Compressing objects:  10% (87/864)   [Kremote: Compressing objects:  11% (96/864)   [Kremote: Compressing objects:  12% (104/864)   [Kremote: Compressing objects:  13% (113/864)   [Kremote: Compressing objects:  14% (121/864)   [Kremote: Compressing objects:  15% (130/864)   [Kremote: Compressing objects:  16% (139/864)   [Kremote: Compressing objects:  17% (147/864)   [Kremote: Compressing objects:  18% (156/864)   [Kremote: Compressing objects:  19% (165/864)   [Kremote: Compressing objects:  20% (173/864)   [Kremote: Compressing objects:  21% (182/864)   [Kremote: Compressing objects:  22% (191/864)   [Kremote: Compressing objects:  23% (199/864)   [Kremote: Compressing objects:  24% (208/864)   [Kremote: Compressing objects:  25% (216/864)   [Kremote: Compressing objects:  26% (225/864)   [Kremote: Compressing objects:  27% (234/864)   [Kremote: Compressing objects:  28% (242/864)   [Kremote: Compressing objects:  29% (251/864)   [Kremote: Compressing objects:  30% (260/864)   [Kremote: Compressing objects:  31% (268/864)   [Kremote: Compressing objects:  32% (277/864)   [Kremote: Compressing objects:  33% (286/864)   [Kremote: Compressing objects:  34% (294/864)   [Kremote: Compressing objects:  35% (303/864)   [Kremote: Compressing objects:  36% (312/864)   [Kremote: Compressing objects:  37% (320/864)   [Kremote: Compressing objects:  38% (329/864)   [Kremote: Compressing objects:  39% (337/864)   [Kremote: Compressing objects:  40% (346/864)   [Kremote: Compressing objects:  41% (355/864)   [Kremote: Compressing objects:  42% (363/864)   [Kremote: Compressing objects:  43% (372/864)   [Kremote: Compressing objects:  44% (381/864)   [Kremote: Compressing objects:  45% (389/864)   [Kremote: Compressing objects:  46% (398/864)   [Kremote: Compressing objects:  47% (407/864)   [Kremote: Compressing objects:  48% (415/864)   [Kremote: Compressing objects:  49% (424/864)   [Kremote: Compressing objects:  50% (432/864)   [Kremote: Compressing objects:  51% (441/864)   [Kremote: Compressing objects:  52% (450/864)   [Kremote: Compressing objects:  53% (458/864)   [Kremote: Compressing objects:  54% (467/864)   [Kremote: Compressing objects:  55% (476/864)   [Kremote: Compressing objects:  56% (484/864)   [Kremote: Compressing objects:  57% (493/864)   [Kremote: Compressing objects:  58% (502/864)   [Kremote: Compressing objects:  59% (510/864)   [Kremote: Compressing objects:  60% (519/864)   [Kremote: Compressing objects:  61% (528/864)   [Kremote: Compressing objects:  62% (536/864)   [Kremote: Compressing objects:  63% (545/864)   [Kremote: Compressing objects:  64% (553/864)   [Kremote: Compressing objects:  65% (562/864)   [Kremote: Compressing objects:  66% (571/864)   [Kremote: Compressing objects:  67% (579/864)   [Kremote: Compressing objects:  68% (588/864)   [Kremote: Compressing objects:  69% (597/864)   [Kremote: Compressing objects:  70% (605/864)   [Kremote: Compressing objects:  71% (614/864)   [Kremote: Compressing objects:  72% (623/864)   [Kremote: Compressing objects:  73% (631/864)   [Kremote: Compressing objects:  74% (640/864)   [Kremote: Compressing objects:  75% (648/864)   [Kremote: Compressing objects:  76% (657/864)   [Kremote: Compressing objects:  77% (666/864)   [Kremote: Compressing objects:  78% (674/864)   [Kremote: Compressing objects:  79% (683/864)   [Kremote: Compressing objects:  80% (692/864)   [Kremote: Compressing objects:  81% (700/864)   [Kremote: Compressing objects:  82% (709/864)   [Kremote: Compressing objects:  83% (718/864)   [Kremote: Compressing objects:  84% (726/864)   [Kremote: Compressing objects:  85% (735/864)   [Kremote: Compressing objects:  86% (744/864)   [Kremote: Compressing objects:  87% (752/864)   [Kremote: Compressing objects:  88% (761/864)   [Kremote: Compressing objects:  89% (769/864)   [Kremote: Compressing objects:  90% (778/864)   [Kremote: Compressing objects:  91% (787/864)   [Kremote: Compressing objects:  92% (795/864)   [Kremote: Compressing objects:  93% (804/864)   [Kremote: Compressing objects:  94% (813/864)   [Kremote: Compressing objects:  95% (821/864)   [Kremote: Compressing objects:  96% (830/864)   [Kremote: Compressing objects:  97% (839/864)   [Kremote: Compressing objects:  98% (847/864)   [Kremote: Compressing objects:  99% (856/864)   [Kremote: Compressing objects: 100% (864/864)   [Kremote: Compressing objects: 100% (864/864), done.[K
+Receiving objects:   0% (1/1239)   Receiving objects:   1% (13/1239)   Receiving objects:   2% (25/1239)   Receiving objects:   3% (38/1239)   Receiving objects:   4% (50/1239)   Receiving objects:   5% (62/1239)   Receiving objects:   6% (75/1239)   Receiving objects:   7% (87/1239)   Receiving objects:   8% (100/1239)   Receiving objects:   9% (112/1239)   Receiving objects:  10% (124/1239)   Receiving objects:  11% (137/1239)   Receiving objects:  12% (149/1239)   Receiving objects:  13% (162/1239)   Receiving objects:  14% (174/1239), 236.00 KiB | 455 KiB/s   Receiving objects:  15% (186/1239), 236.00 KiB | 455 KiB/s   Receiving objects:  15% (188/1239), 908.00 KiB | 872 KiB/s   Receiving objects:  15% (192/1239), 2.45 MiB | 1.16 MiB/s   Receiving objects:  15% (193/1239), 4.23 MiB | 1.34 MiB/s   Receiving objects:  16% (199/1239), 4.23 MiB | 1.34 MiB/s   Receiving objects:  17% (211/1239), 4.23 MiB | 1.34 MiB/s   Receiving objects:  18% (224/1239), 4.23 MiB | 1.34 MiB/s   Receiving objects:  19% (236/1239), 4.23 MiB | 1.34 MiB/s   Receiving objects:  20% (248/1239), 4.23 MiB | 1.34 MiB/s   Receiving objects:  21% (261/1239), 4.23 MiB | 1.34 MiB/s   Receiving objects:  22% (273/1239), 4.23 MiB | 1.34 MiB/s   Receiving objects:  23% (285/1239), 4.23 MiB | 1.34 MiB/s   Receiving objects:  24% (298/1239), 4.23 MiB | 1.34 MiB/s   Receiving objects:  25% (310/1239), 4.23 MiB | 1.34 MiB/s   Receiving objects:  26% (323/1239), 4.23 MiB | 1.34 MiB/s   Receiving objects:  27% (335/1239), 4.23 MiB | 1.34 MiB/s   Receiving objects:  28% (347/1239), 4.23 MiB | 1.34 MiB/s   Receiving objects:  29% (360/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  30% (372/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  31% (385/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  32% (397/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  33% (409/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  34% (422/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  35% (434/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  36% (447/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  37% (459/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  37% (462/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  38% (471/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  39% (484/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  40% (496/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  41% (508/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  42% (521/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  43% (533/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  44% (546/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  45% (558/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  46% (570/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  47% (583/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  48% (595/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  49% (608/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  50% (620/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  51% (632/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  52% (645/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  53% (657/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  54% (670/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  55% (682/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  56% (694/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  57% (707/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  58% (719/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  59% (732/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  60% (744/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  61% (756/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  62% (769/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  63% (781/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  64% (793/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  65% (806/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  66% (818/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  67% (831/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  68% (843/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  69% (855/1239), 5.36 MiB | 1.46 MiB/s   Receiving objects:  70% (868/1239), 6.54 MiB | 1.57 MiB/s   Receiving objects:  71% (880/1239), 6.54 MiB | 1.57 MiB/s   Receiving objects:  72% (893/1239), 6.54 MiB | 1.57 MiB/s   Receiving objects:  73% (905/1239), 6.54 MiB | 1.57 MiB/s   Receiving objects:  74% (917/1239), 6.54 MiB | 1.57 MiB/s   Receiving objects:  75% (930/1239), 6.54 MiB | 1.57 MiB/s   Receiving objects:  76% (942/1239), 6.54 MiB | 1.57 MiB/s   Receiving objects:  77% (955/1239), 6.54 MiB | 1.57 MiB/s   Receiving objects:  78% (967/1239), 6.54 MiB | 1.57 MiB/s   Receiving objects:  79% (979/1239), 6.54 MiB | 1.57 MiB/s   Receiving objects:  80% (992/1239), 6.54 MiB | 1.57 MiB/s   Receiving objects:  81% (1004/1239), 6.54 MiB | 1.57 MiB/s   Receiving objects:  82% (1016/1239), 6.54 MiB | 1.57 MiB/s   Receiving objects:  83% (1029/1239), 6.54 MiB | 1.57 MiB/s   Receiving objects:  84% (1041/1239), 6.54 MiB | 1.57 MiB/s   Receiving objects:  85% (1054/1239), 6.54 MiB | 1.57 MiB/s   Receiving objects:  86% (1066/1239), 6.54 MiB | 1.57 MiB/s   Receiving objects:  87% (1078/1239), 6.54 MiB | 1.57 MiB/s   Receiving objects:  88% (1091/1239), 6.54 MiB | 1.57 MiB/s   Receiving objects:  89% (1103/1239), 7.79 MiB | 1.67 MiB/s   Receiving objects:  90% (1116/1239), 7.79 MiB | 1.67 MiB/s   Receiving objects:  91% (1128/1239), 7.79 MiB | 1.67 MiB/s   Receiving objects:  92% (1140/1239), 7.79 MiB | 1.67 MiB/s   Receiving objects:  93% (1153/1239), 7.79 MiB | 1.67 MiB/s   Receiving objects:  94% (1165/1239), 7.79 MiB | 1.67 MiB/s   Receiving objects:  95% (1178/1239), 7.79 MiB | 1.67 MiB/s   Receiving objects:  96% (1190/1239), 7.79 MiB | 1.67 MiB/s   remote: Total 1239 (delta 297), reused 1237 (delta 295)[K
+Receiving objects:  97% (1202/1239), 7.79 MiB | 1.67 MiB/s   Receiving objects:  98% (1215/1239), 7.79 MiB | 1.67 MiB/s   Receiving objects:  99% (1227/1239), 7.79 MiB | 1.67 MiB/s   Receiving objects: 100% (1239/1239), 7.79 MiB | 1.67 MiB/s   Receiving objects: 100% (1239/1239), 8.06 MiB | 1.81 MiB/s, done.
+Resolving deltas:   0% (0/297)   Resolving deltas:  46% (138/297)   Resolving deltas:  47% (142/297)   Resolving deltas:  48% (143/297)   Resolving deltas:  54% (162/297)   Resolving deltas:  55% (164/297)   Resolving deltas:  57% (170/297)   Resolving deltas:  59% (177/297)   Resolving deltas:  61% (184/297)   Resolving deltas:  71% (212/297)   Resolving deltas:  80% (240/297)   Resolving deltas:  81% (241/297)   Resolving deltas:  86% (258/297)   Resolving deltas:  87% (259/297)   Resolving deltas:  97% (291/297)   Resolving deltas:  99% (295/297)   Resolving deltas: 100% (297/297)   Resolving deltas: 100% (297/297), done.
+Switched to a new branch 'audit/2013-02-25-6-403332564'
+# On branch audit/2013-02-25-6-403332564
+nothing to commit (working directory clean)
 From github.com:bewest/diabetes
  * branch            audit/2013-02-25-6-403332564 -> FETCH_HEAD
-Already up-to-date.
+Updating 0cd795c..98a2504
+Fast-forward
 CREATE VMODEM /home/insulaudit/bin/create_vmodem
 /home/insulaudit/bin/create_vmodem
 socat TCP-L:9001,reuseaddr pty,link=/home/insulaudit/sessions/6-403332564/vmodem,b9600,raw
-2013/02/25 08:12:39 socat[6817] N PTY is /dev/pts/19
+2013/02/25 08:25:04 socat[9023] N PTY is /dev/pts/19
 /home/insulaudit/bin/perform_audit
 SHOULD I USE VMODEM: /home/insulaudit/sessions/6-403332564/vmodem?
 insulaudit onetouch --port /home/insulaudit/sessions/6-403332564/vmodem sugars
 INFO:insulaudit.devices.clmm.proto:hello world
-2013/02/25 08:12:42 socat[6817] N opening connection to AF=2 127.0.0.1:9001
-2013/02/25 00:14:37 socat[55421] N accepting connection from AF=2 127.0.0.1:34440 on AF=2 127.0.0.1:9001
-2013/02/25 00:14:37 socat[55421] N opening character device "/dev/ttyUSB0" for reading and writing
-2013/02/25 08:12:42 socat[6817] N successfully connected from local address AF=2 127.0.0.1:32803
-2013/02/25 08:12:42 socat[6817] N starting data transfer loop with FDs [3,3] and [4,4]
-2013/02/25 00:14:40 socat[55421] N starting data transfer loop with FDs [4,4] and [3,3]
+2013/02/25 00:27:02 socat[55498] N accepting connection from AF=2 127.0.0.1:34455 on AF=2 127.0.0.1:9001
+2013/02/25 00:27:02 socat[55498] N opening character device "/dev/ttyUSB0" for reading and writing
+2013/02/25 08:25:07 socat[9023] N opening connection to AF=2 127.0.0.1:9001
+2013/02/25 08:25:07 socat[9023] N successfully connected from local address AF=2 127.0.0.1:32822
+2013/02/25 08:25:07 socat[9023] N starting data transfer loop with FDs [3,3] and [4,4]
+2013/02/25 00:27:02 socat[55498] N starting data transfer loop with FDs [4,4] and [3,3]
 ('P 500,"WWW2A68BY","MG/DL " 05D9', rec.array([(datetime.datetime(2013, 2, 25, 0, 11, 8), 177),
        (datetime.datetime(2013, 2, 24, 23, 23, 34), 178),
        (datetime.datetime(2013, 2, 24, 22, 45), 169),
@@ -1009,8 +1016,7 @@ len glucose: 2
 2012-12-19T10:15:04	268
 2012-12-19T03:26:45	104
 2012-12-18T23:07:18	59
-2012-12-18T22:22:55	102013/02/25 00:15:32 socat[55421] N socket 1 (fd 4) is at EOF
-2
+2012-12-18T22:22:55	102
 2012-12-18T21:15:19	151
 2012-12-18T19:23:43	84
 2012-12-18T17:50:58	142
@@ -1076,27 +1082,26 @@ len glucose: 2
 2012-12-04T13:44:50	174
 2012-12-03T20:23:11	126
 2012-12-03T14:16:17	77
-2013/02/25 08:13:37 socat[6817] N read(3, 0x1d73060, 8192): Input/output error (probably PTY closed)
-2013/02/25 08:13:37 socat[6817] N socket 1 (fd 3) is at EOF
+2013/02/25 00:27:57 socat[55498] N socket 1 (fd 4) is at EOF
+2013/02/25 08:26:02 socat[9023] N read(3, 0x1c03060, 8192): Input/output error (probably PTY closed)
+2013/02/25 08:26:02 socat[9023] N socket 1 (fd 3) is at EOF
 /home/insulaudit/bin/clean_audit_work
-/home/insulaudit/bin/clean_audit_work: line 11: read_config: command not found
-/home/insulaudit/bin/clean_audit_work: line 12: read_config: command not found
-/home/insulaudit/bin/clean_audit_work: line 13: read_config: command not found
 add 'incoming.log'
-[audit/2013-02-25-6-403332564 36b17ef] commit 6-403332564 2013-02-25T08:13:37
- 1 file changed, 1003 insertions(+), 3 deletions(-)
-2013/02/25 08:13:38 socat[6817] N exiting with status 0
-2013/02/25 00:15:33 socat[55421] N exiting with status 0
-Counting objects: 5, done.
+[audit/2013-02-25-6-403332564 502e2f5] commit 6-403332564 2013-02-25T08:26:02
+ 1 file changed, 1004 insertions(+)
+ create mode 100644 incoming.log
+2013/02/25 08:26:03 socat[9023] N exiting with status 0
+2013/02/25 00:27:58 socat[55498] N exiting with status 0
+Counting objects: 4, done.
 Compressing objects:  33% (1/3)   Compressing objects:  66% (2/3)   Compressing objects: 100% (3/3)   Compressing objects: 100% (3/3), done.
-Writing objects:  33% (1/3)   Writing objects:  66% (2/3)   Writing objects: 100% (3/3)   Writing objects: 100% (3/3), 8.22 KiB, done.
-Total 3 (delta 1), reused 0 (delta 0)
+Writing objects:  33% (1/3)   Writing objects:  66% (2/3)   Writing objects: 100% (3/3)   Writing objects: 100% (3/3), 8.25 KiB, done.
+Total 3 (delta 1), reused 1 (delta 0)
 To git@github.com:bewest/diabetes.git
-   4a7161c..36b17ef  audit/2013-02-25-6-403332564 -> audit/2013-02-25-6-403332564
+   98a2504..502e2f5  audit/2013-02-25-6-403332564 -> audit/2013-02-25-6-403332564
 ?? rm /home/insulaudit/sessions/6-403332564
   PID TTY          TIME CMD
- 6773 pts/18   00:00:00 sh
- 6774 pts/18   00:00:00 do_audit_for.sh
- 6962 pts/18   00:00:00 ps
+ 8955 pts/18   00:00:00 sh
+ 8956 pts/18   00:00:00 do_audit_for.sh
+ 9201 pts/18   00:00:00 ps
 THIS IS MY SPECIAL LOGIN SHELL. HANGING UP.
 Connection to bewest.io closed.
