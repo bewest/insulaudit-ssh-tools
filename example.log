@@ -1,7 +1,7 @@
 
 /usr/bin/socat -d -d  tcp-l:9001,reuseaddr FILE:/dev/ttyUSB0,nonblock,b9600,raw
 now run ssh -L 9001:localhost:9001 bewest.io
-2013/02/24 16:28:51 socat[53876] N listening on AF=2 0.0.0.0:9001
+2013/02/25 00:14:30 socat[55421] N listening on AF=2 0.0.0.0:9001
 $0: /home/insulaudit/bin/do_audit_for.sh
 tool: audit
 session: 403332564
@@ -12,13 +12,17 @@ SHELL=/bin/sh
 TERM=screen-256color-bce
 BASE=/home/insulaudit/session
 FOO=BAR
-SSH_CLIENT=24.5.43.241 36651 22
-WORK_REMOTE=/home/insulaudit/sessions/6-403332564/remote
+SSH_CLIENT=24.5.43.241 36969 22
+PHR_REPO=git@github.com:bewest/diabetes.git
+WORK_REMOTE=/home/insulaudit/sessions/6-403332564/remote.git
 WORK_CONF=/home/insulaudit/sessions/6-403332564/conf
 SSH_TTY=/dev/pts/18
 WORK_LOCAL=/home/insulaudit/sessions/6-403332564/local
+BRANCH=audit/2013-02-25-6-403332564
 AUDIT_USER=bewest
 USER=insulaudit
+SSH_AUTH_SOCK=/tmp/ssh-EPbIXI6772/agent.6772
+SESSION_CONFIG=/home/insulaudit/sessions/6-403332564/conf/audit.config
 PATH=/home/insulaudit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 MAIL=/var/mail/insulaudit
 PWD=/home/insulaudit
@@ -26,33 +30,56 @@ LANG=en_US.UTF-8
 SHLVL=1
 HOME=/home/insulaudit
 LOGNAME=insulaudit
-SSH_CONNECTION=24.5.43.241 36651 10.170.185.103 22
+SSH_CONNECTION=24.5.43.241 36969 10.170.185.103 22
 AUDIT_UID=6
 WORK_BASE=/home/insulaudit/sessions/6-403332564
+SESS_KEY=6-403332564
 AUDIT_TOOL=audit
 _=/usr/bin/env
-/home/insulaudit/bin/do_audit_for.sh
+/home/insulaudit/bin/setup_audit_work
 https://transactionalweb.com/cloud/configfile.html?s=403332564&u=6
+SETUP GIT CLONE
+keys:
+2048 2f:28:35:d1:0d:7a:f1:40:ec:b6:4e:80:f4:99:db:82 /home/bewest/.ssh/id_rsa (RSA)
+2048 a5:70:46:71:e0:6d:76:8a:2e:0e:a6:45:86:9f:e1:c9 /home/bewest/.ssh/id_rsa (RSA)
+2048 7d:b9:3a:e0:e0:7d:4d:ad:ce:e1:96:10:c5:a0:be:16 /home/bewest/.ssh/keys/grace.id_rsa.key (RSA)
+1024 b5:9d:dc:a2:62:aa:27:5f:65:3b:90:3f:1d:a8:88:0c /home/bewest/.ssh/keys/test_id_dsa.key (DSA)
+2048 a9:c7:7b:6b:7f:d3:34:2f:3f:19:bd:c9:f1:9d:06:80 /home/bewest/.ssh/keys/test_rsa.key (RSA)
+2048 ee:6c:3f:21:07:55:e3:da:99:f2:b4:7e:82:41:fb:0e /home/meraki/.ssh/id_rsa (RSA)
+2048 d9:34:ca:e9:52:af:35:55:81:a1:7e:4a:ac:6a:44:fc /home/bewest/.ssh/bewest (RSA)
+2048 13:9b:f6:e3:cf:7e:ff:36:57:28:df:30:54:2b:1f:be /home/bewest/.ssh/gitolite_admin (RSA)
+2048 c2:f5:c9:e2:76:1d:a2:d9:bc:f9:2a:4a:d3:4f:89:e8 /home/bewest/.ssh/insulaudit.key (RSA)
+2048 4f:35:cb:ff:06:65:b4:ca:c7:c3:06:bf:f6:c0:fb:d1 /home/bewest/.ssh/test_insulaudit.key (RSA)
+git@github.com:bewest/diabetes.git
+/home/insulaudit/sessions/6-403332564/remote.git
+/home/insulaudit/sessions/6-403332564/local
+fatal: destination path '/home/insulaudit/sessions/6-403332564/local' already exists and is not an empty directory.
+fatal: A branch named 'audit/2013-02-25-6-403332564' already exists.
+Already on 'audit/2013-02-25-6-403332564'
+From github.com:bewest/diabetes
+ * branch            audit/2013-02-25-6-403332564 -> FETCH_HEAD
+Already up-to-date.
 CREATE VMODEM /home/insulaudit/bin/create_vmodem
 /home/insulaudit/bin/create_vmodem
-XXX: 28044
-XXX: 28044
-socat pid: 28045
 socat TCP-L:9001,reuseaddr pty,link=/home/insulaudit/sessions/6-403332564/vmodem,b9600,raw
-2013/02/25 00:26:58 socat[28045] N PTY is /dev/pts/19
-WHO IS USING /home/insulaudit/sessions/6-403332564/vmodem
-/home/insulaudit/bin/do_audit_for.sh
+2013/02/25 08:12:39 socat[6817] N PTY is /dev/pts/19
+/home/insulaudit/bin/perform_audit
 SHOULD I USE VMODEM: /home/insulaudit/sessions/6-403332564/vmodem?
-SNIFF FIRMWARE AND VERSION
 insulaudit onetouch --port /home/insulaudit/sessions/6-403332564/vmodem sugars
 INFO:insulaudit.devices.clmm.proto:hello world
-2013/02/24 16:28:58 socat[53876] N accepting connection from AF=2 127.0.0.1:34122 on AF=2 127.0.0.1:9001
-2013/02/24 16:28:58 socat[53876] N opening character device "/dev/ttyUSB0" for reading and writing
-2013/02/25 00:27:03 socat[28045] N opening connection to AF=2 127.0.0.1:9001
-2013/02/25 00:27:03 socat[28045] N successfully connected from local address AF=2 127.0.0.1:60978
-2013/02/25 00:27:03 socat[28045] N starting data transfer loop with FDs [3,3] and [4,4]
-2013/02/24 16:29:02 socat[53876] N starting data transfer loop with FDs [4,4] and [3,3]
-('P 500,"WWW2A68BY","MG/DL " 05D9', rec.array([(datetime.datetime(2013, 2, 24, 13, 23, 18), 203),
+2013/02/25 08:12:42 socat[6817] N opening connection to AF=2 127.0.0.1:9001
+2013/02/25 00:14:37 socat[55421] N accepting connection from AF=2 127.0.0.1:34440 on AF=2 127.0.0.1:9001
+2013/02/25 00:14:37 socat[55421] N opening character device "/dev/ttyUSB0" for reading and writing
+2013/02/25 08:12:42 socat[6817] N successfully connected from local address AF=2 127.0.0.1:32803
+2013/02/25 08:12:42 socat[6817] N starting data transfer loop with FDs [3,3] and [4,4]
+2013/02/25 00:14:40 socat[55421] N starting data transfer loop with FDs [4,4] and [3,3]
+('P 500,"WWW2A68BY","MG/DL " 05D9', rec.array([(datetime.datetime(2013, 2, 25, 0, 11, 8), 177),
+       (datetime.datetime(2013, 2, 24, 23, 23, 34), 178),
+       (datetime.datetime(2013, 2, 24, 22, 45), 169),
+       (datetime.datetime(2013, 2, 24, 21, 22, 58), 131),
+       (datetime.datetime(2013, 2, 24, 20, 8, 42), 164),
+       (datetime.datetime(2013, 2, 24, 17, 37, 5), 185),
+       (datetime.datetime(2013, 2, 24, 13, 23, 18), 203),
        (datetime.datetime(2013, 2, 24, 13, 5, 43), 223),
        (datetime.datetime(2013, 2, 24, 12, 21, 55), 253),
        (datetime.datetime(2013, 2, 24, 11, 4, 30), 315),
@@ -545,15 +572,15 @@ INFO:insulaudit.devices.clmm.proto:hello world
        (datetime.datetime(2012, 12, 4, 19, 42, 55), 198),
        (datetime.datetime(2012, 12, 4, 13, 44, 50), 174),
        (datetime.datetime(2012, 12, 3, 20, 23, 11), 126),
-       (datetime.datetime(2012, 12, 3, 14, 16, 17), 77),
-       (datetime.datetime(2012, 12, 3, 12, 32, 17), 65),
-       (datetime.datetime(2012, 12, 3, 6, 3, 32), 196),
-       (datetime.datetime(2012, 12, 3, 5, 5, 38), 276),
-       (datetime.datetime(2012, 12, 2, 23, 8, 20), 116),
-       (datetime.datetime(2012, 12, 2, 22, 23, 11), 96),
-       (datetime.datetime(2012, 12, 2, 21, 45, 52), 136)], 
+       (datetime.datetime(2012, 12, 3, 14, 16, 17), 77)], 
       dtype=[('time', '|O8'), ('value', '<i8')]))
 len glucose: 2
+2013-02-25T00:11:08	177
+2013-02-24T23:23:34	178
+2013-02-24T22:45:00	169
+2013-02-24T21:22:58	131
+2013-02-24T20:08:42	164
+2013-02-24T17:37:05	185
 2013-02-24T13:23:18	203
 2013-02-24T13:05:43	223
 2013-02-24T12:21:55	253
@@ -982,7 +1009,8 @@ len glucose: 2
 2012-12-19T10:15:04	268
 2012-12-19T03:26:45	104
 2012-12-18T23:07:18	59
-2012-12-18T22:22:55	102
+2012-12-18T22:22:55	102013/02/25 00:15:32 socat[55421] N socket 1 (fd 4) is at EOF
+2
 2012-12-18T21:15:19	151
 2012-12-18T19:23:43	84
 2012-12-18T17:50:58	142
@@ -1039,7 +1067,6 @@ len glucose: 2
 2012-12-06T18:24:00	111
 2012-12-06T13:45:38	165
 2012-12-06T12:24:45	274
-2013/02/24 16:29:54 socat[53876] N socket 1 (fd 4) is at EOF
 2012-12-06T03:52:24	139
 2012-12-06T00:52:09	80
 2012-12-06T00:27:08	53
@@ -1049,21 +1076,27 @@ len glucose: 2
 2012-12-04T13:44:50	174
 2012-12-03T20:23:11	126
 2012-12-03T14:16:17	77
-2012-12-03T12:32:17	65
-2012-12-03T06:03:32	196
-2012-12-03T05:05:38	276
-2012-12-02T23:08:20	116
-2012-12-02T22:23:11	96
-2012-12-02T21:45:52	136
-2013/02/25 00:27:59 socat[28045] N read(3, 0x77c040, 8192): Input/output error (probably PTY closed)
-2013/02/25 00:27:59 socat[28045] N socket 1 (fd 3) is at EOF
-/home/insulaudit/bin/do_audit_for.sh
+2013/02/25 08:13:37 socat[6817] N read(3, 0x1d73060, 8192): Input/output error (probably PTY closed)
+2013/02/25 08:13:37 socat[6817] N socket 1 (fd 3) is at EOF
+/home/insulaudit/bin/clean_audit_work
+/home/insulaudit/bin/clean_audit_work: line 11: read_config: command not found
+/home/insulaudit/bin/clean_audit_work: line 12: read_config: command not found
+/home/insulaudit/bin/clean_audit_work: line 13: read_config: command not found
+add 'incoming.log'
+[audit/2013-02-25-6-403332564 36b17ef] commit 6-403332564 2013-02-25T08:13:37
+ 1 file changed, 1003 insertions(+), 3 deletions(-)
+2013/02/25 08:13:38 socat[6817] N exiting with status 0
+2013/02/25 00:15:33 socat[55421] N exiting with status 0
+Counting objects: 5, done.
+Compressing objects:  33% (1/3)   Compressing objects:  66% (2/3)   Compressing objects: 100% (3/3)   Compressing objects: 100% (3/3), done.
+Writing objects:  33% (1/3)   Writing objects:  66% (2/3)   Writing objects: 100% (3/3)   Writing objects: 100% (3/3), 8.22 KiB, done.
+Total 3 (delta 1), reused 0 (delta 0)
+To git@github.com:bewest/diabetes.git
+   4a7161c..36b17ef  audit/2013-02-25-6-403332564 -> audit/2013-02-25-6-403332564
 ?? rm /home/insulaudit/sessions/6-403332564
   PID TTY          TIME CMD
-28037 pts/18   00:00:00 sh
-28038 pts/18   00:00:00 do_audit_for.sh
-28045 pts/18   00:00:00 socat
-28082 pts/18   00:00:00 ps
+ 6773 pts/18   00:00:00 sh
+ 6774 pts/18   00:00:00 do_audit_for.sh
+ 6962 pts/18   00:00:00 ps
 THIS IS MY SPECIAL LOGIN SHELL. HANGING UP.
-2013/02/24 16:29:55 socat[53876] N exiting with status 0
 Connection to bewest.io closed.
