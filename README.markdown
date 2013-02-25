@@ -100,7 +100,8 @@ auditing.
 
 Here's stack overflow on the subject:
 * [restricting access to git](http://superuser.com/questions/299927/can-you-specify-git-shell-in-ssh-authorized-keys-to-restrict-access-to-only-git)
-* [how gitolite uses ssh](http://sitaramc.github.com/gitolite/glssh.html)
+
+### how gitolite uses ssh](http://sitaramc.github.com/gitolite/glssh.html)
 
 ```
 restricting shell access/distinguishing one user from another
@@ -144,7 +145,7 @@ Looks like @sitaramc tries very hard to keep duplicate entries out,
 and to keep the "curated" list separate from any manually added
 entries.
 
-## gitolite
+### gitolite
 
 You can emulate
 [gitolite-shell](https://github.com/sitaramc/gitolite/blob/master/src/gitolite-shell)
@@ -157,8 +158,46 @@ interact with some out of band service as well.
 
 Action here is something like "upload, recieve, etc...." 
 
+### Extending gitolite
+* http://sitaramc.github.com/gitolite/cust.html#pushcode
 
-## git hacks
+#### Proposed extensions?
+
+Some ideas on how to transition these scripts to be gitolite commands
+* `upload-helper []`
+* `burn-branch <branch-name> <helper>` - burn a branch into a repo using this idiom:
+```bash
+git init new-content
+cd new-content
+# burn a branch
+git checkout -b audit-branch && git status || git checkout audit-branch
+# run ${HELPER}
+HELPER='echo "new content" new-content/incoming.log'
+${HELPER}
+git add -v .
+git commit -avm 'burned new content into my branch'
+cd ..
+git clone --bare git@foo.io:myrepo.git remote.git
+# something like
+git --git-dir remote.git remote add local new-content
+git --git-dir fetch local
+git --git-dir rebase --onto audit-branch audit-branch..local/audit-branch
+git --git-dir push origin audit-branch
+# test -n $DEBUG && git --git-dir push -f origin audit-branch #???
+```
+* `stitch-branch <onto> <branch-name> <helper>` - specify a domain specific
+  helper to resolve differences in newly generated content (eg, for regular
+  auditing, where conflicts can be regularly resolved automatically.)
+```bash
+# something like
+git --git-dir rebase --onto audit-branch audit-branch..local/audit-branch
+${HELPER}
+git add -v .
+git commit -avm 'burned new content into my branch'
+git rebase --continue
+```
+
+#### git hacks
 This one is interesting:
 https://github.com/progrium/gitreceive/blob/master/gitreceive
 
