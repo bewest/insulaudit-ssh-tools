@@ -7,7 +7,9 @@ config_url="https://transactionalweb.com/cloud/configfile.html?s=${AUDIT_SESSION
 echo $config_url
 mkdir -p $WORK_CONF
 
-curl -s $config_url > $WORK_CONF/audit.config
+export SESSION_CONFIG=$WORK_CONF/audit.config
+
+curl -s $config_url > $SESSION_CONFIG
 
 #####
 # EOF

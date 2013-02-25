@@ -3,5 +3,14 @@
 
 echo $0
 
+echo SHOULD I USE VMODEM: $VMODEM? $( test -f $VMODEM )
+if [[ -a $VMODEM ]] ; then
+  echo '#' WHO IS USING $VMODEM
+  lsof $VMODEM
+  insulaudit onetouch --port $VMODEM hello
+else
+  echo $VMODEM does not exist
+fi
+
 #####
 # EOF

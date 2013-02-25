@@ -22,9 +22,6 @@ Part of "user setup" or registration has to be adding an entry for the user's
 beagle bone key to our `authorized_keys_` file
 
 For example,
-```
-command="FOO=BAR /home/insulaudit/bin/do_audit_for.sh bewest" ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDSZh82PI+uQe62fNvmqNNdB6mpPjJfpoPlxt515PVKjUpE49YQUXpdkbOYNHGtT5cRWdvEBJ7zVyJt0Iiy2cUVZjO2dgd/+iKwTNbFXvk9WyKP/MRwij3AHrf+nMMg9csz0qQ5JwRqBktjOuf3Vxkrf/bkUROxnvj1CU3SDNe7NUx7aGF/awwnQ19vzS/T6oCUct+ivGNWX+ZBLVLeWzPxm4T88Lw6v/ASWeHRydVtEoAOj66F1EP1R429EwBnasZi1a6sqeh3H8wNtqysaN4ultrOPsQldENKOTApZbjtAEL5u03m+/gRxu0PGymDhUFSn08ruwB8qxAedwfS4D9P bewest@ip-10-170-185-103
-```
 This entry prevents `bash` or `sh` from running.  Usually what happens
 is ssh will start bash as the new user.
 
@@ -47,7 +44,13 @@ SSH_CONNECTION=24.5.43.241 53043 10.170.185.103 22
 bewest@paragon:~/src$ 
 ```
 
-With the above entry in authorized_keys:
+### With the `authorized_keys`:
+```
+command="FOO=BAR /home/insulaudit/bin/do_audit_for.sh bewest" ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDSZh82PI+uQe62fNvmqNNdB6mpPjJfpoPlxt515PVKjUpE49YQUXpdkbOYNHGtT5cRWdvEBJ7zVyJt0Iiy2cUVZjO2dgd/+iKwTNbFXvk9WyKP/MRwij3AHrf+nMMg9csz0qQ5JwRqBktjOuf3Vxkrf/bkUROxnvj1CU3SDNe7NUx7aGF/awwnQ19vzS/T6oCUct+ivGNWX+ZBLVLeWzPxm4T88Lw6v/ASWeHRydVtEoAOj66F1EP1R429EwBnasZi1a6sqeh3H8wNtqysaN4ultrOPsQldENKOTApZbjtAEL5u03m+/gRxu0PGymDhUFSn08ruwB8qxAedwfS4D9P bewest@ip-10-170-185-103
+
+command="FOO=BAR /home/insulaudit/bin/do_audit_for.sh bewest" ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDIvYgpg7C+4qqpGAelfX9BilYe4Qs6pJlOlLyZU553w+dmCBb3JGfcMoT8ppBse3N/MTY+DhZ6pfSq//h81wQdj1ieSn6TshCzUyt/crbp+5VPUobj8Y/3DiByiNgnGmY6L17qab3OMCK7ns/+WGWkfGYmN2XFxqbVpENTE2AYyOMkl++VFi+B5UTuqR3XLhlVj1xY0928tEpxKKZIfJaKgcIfxkgVM9fQnH3z/kFM1AIER4oB933CROlln9CXKTFOODUvWk8Xqh2R88DxjcCbaNUrBrsMDvqfb5z3mFKWPhaNgi8Y4gsNiDCgZpsoZJV/uXQRGtdTvfNWHgtCoXcD bewest@paragon
+
+```
 
 ```bash
 bewest@ip-10-170-185-103:~/src/insulaudit$ ssh insulaudit 'whoami ; env ; echo $SHELL'

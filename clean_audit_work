@@ -3,6 +3,10 @@
 
 echo $0
 # rm -Rvf $WORK_BASE
+if [[ -f $VMODEM ]] ; then
+  # rm -v $VMODEM
+  echo $VMODEM
+fi
 echo ?? rm $WORK_BASE
 
 #####
