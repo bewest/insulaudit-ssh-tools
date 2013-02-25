@@ -1,7 +1,27 @@
 # ssh + git hacks
 
+## Quick intro
+This method automatically forwards serial device over ssh for one-time consumption.
+After resource is consumed once, all ports and sessions are closed cleanly.
+
+Here's example output with actual data:
+https://github.com/bewest/insulaudit-ssh-tools/blob/master/example.log
+
+https://github.com/bewest/insulaudit-ssh-tools/blob/master/socat_forward_stick.sh - from beaglebone/remote socat and ssh end
+Uses a reverse port forward in order to get control sequence right, this is reverse of what we've been thinking, but somewhat trivial/technical difference.
+
+https://github.com/bewest/insulaudit-ssh-tools/blob/master/create_vmodem - server side socat
+https://github.com/bewest/insulaudit-ssh-tools/blob/master/do_audit_for.sh - server side authorize port+shell+resource
+https://github.com/bewest/insulaudit-ssh-tools/blob/master/perform_audit - auditing script
+
+https://github.com/bewest/diabetes/blob/audit/2013-02-25-6-403332564/incoming.log
+Here's the resulting checked-in log file.
+
+The resource can only be consumed once using this implementation; the whole pipeline is shut-down after a single open/close session on the virtual modem.
+
+## Details
 See:
-## `authorized_keys`
+### `authorized_keys`
 * [ssh `authorized_keys`](http://man.he.net/man5/authorized_keys)
 
 Gitolite and svnserve use this technique to map an authenticated key
