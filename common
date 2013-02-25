@@ -1,0 +1,12 @@
+# vim: set ft=sh
+
+function read_config ( ) {
+  file=$SESSION_CONFIG
+  key=$1
+  default=$2
+  git config -f $file --get $key || echo $default
+}
+
+
+#####
+# EOF

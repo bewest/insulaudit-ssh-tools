@@ -7,6 +7,17 @@ if [[ -f $VMODEM ]] ; then
   # rm -v $VMODEM
   echo $VMODEM
 fi
+
+email="$(read_config registration.email bewest+insulaudit@gmail.com)"
+first="$(read_config registration.firstname insulaudit)"
+last="$(read_config registration.lastname helper)"
+( cd $WORK_LOCAL
+  git config user.email "$email"
+  git config user.name "$first $last"
+  git add -v .
+  git commit -avm "commit $(basename $WORK_BASE) $(date +%FT%T)"
+  git push origin $BRANCH
+)
 echo ?? rm $WORK_BASE
 
 #####

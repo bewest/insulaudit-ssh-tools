@@ -15,13 +15,6 @@ function do_socat ( ) {
 }
 
 ( do_socat || echo "SOCAT DIED" ) &
-echo "XXX:" $$
-echo "XXX:" $_
-export SOCAT_PID=$!
-echo socat pid: $SOCAT_PID
-sleep 2
-echo "WHO IS USING $VMODEM"
-lsof $VMODEM
 
 #####
 # EOF

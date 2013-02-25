@@ -1,5 +1,6 @@
 #!/bin/bash
 # part of insulaudit-ssh-tools
+. common
 
 echo $0
 mkdir -p $WORK_BASE
@@ -7,9 +8,25 @@ config_url="https://transactionalweb.com/cloud/configfile.html?s=${AUDIT_SESSION
 echo $config_url
 mkdir -p $WORK_CONF
 
-export SESSION_CONFIG=$WORK_CONF/audit.config
 
 curl -s $config_url > $SESSION_CONFIG
+
+echo SETUP GIT CLONE
+echo keys:
+# eval $(ssh-agent)
+ssh-add -l
+PHR_REPO=$(read_config registration.phr)
+export PHR_REPO
+echo $PHR_REPO
+echo $WORK_REMOTE
+echo $WORK_LOCAL
+
+# git clone --bare $PHR_REPO $WORK_REMOTE
+git clone $PHR_REPO $WORK_LOCAL
+
+cd $WORK_LOCAL
+git checkout -b $BRANCH && git status || git checkout $BRANCH
+git pull origin $BRANCH
 
 #####
 # EOF
