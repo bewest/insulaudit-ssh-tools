@@ -4,6 +4,9 @@
 This method automatically forwards serial device over ssh for one-time consumption.
 After resource is consumed once, all ports and sessions are closed cleanly.
 
+* [steps 1-12 server side registration/config](https://github.com/ehwest/cloudify)
+* [steps 1-19 beaglebone firmware](https://github.com/n-west/insulware)
+* [gist of ~6-20 beaglebone](https://gist.github.com/bewest/4741016)
 * Here's [example output](https://github.com/bewest/insulaudit-ssh-tools/blob/master/example.log) with actual data of `steps 16-25`
 * [steps 15, beaglebone forward remote beaglebone/remote socat via ssh](https://github.com/bewest/insulaudit-ssh-tools/blob/master/socat_forward_stick.sh) this executes on beaglebone after step 14,15, and manages the rest of the process.
 
