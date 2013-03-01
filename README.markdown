@@ -4,14 +4,19 @@
 This method automatically forwards serial device over ssh for one-time consumption.
 After resource is consumed once, all ports and sessions are closed cleanly.
 
-* Here's [example output](https://github.com/bewest/insulaudit-ssh-tools/blob/master/example.log) with actual data
-* [forward remote beaglebone/remote socat via ssh](https://github.com/bewest/insulaudit-ssh-tools/blob/master/socat_forward_stick.sh)
+* Here's [example output](https://github.com/bewest/insulaudit-ssh-tools/blob/master/example.log) with actual data of `steps 16-25`
+* [steps 15, beaglebone forward remote beaglebone/remote socat via ssh](https://github.com/bewest/insulaudit-ssh-tools/blob/master/socat_forward_stick.sh) this executes on beaglebone after step 14,15, and manages the rest of the process.
 
-* [server side socat](https://github.com/bewest/insulaudit-ssh-tools/blob/master/create_vmodem)
-* [server side authorize port+shell+resource](https://github.com/bewest/insulaudit-ssh-tools/blob/master/do_audit_for.sh)
-* [auditing script](https://github.com/bewest/insulaudit-ssh-tools/blob/master/perform_audit)
+* [step 19, 20, server side socat](https://github.com/bewest/insulaudit-ssh-tools/blob/master/create_vmodem)
+* [steps 17-25 server side authorize port+shell+resource](https://github.com/bewest/insulaudit-ssh-tools/blob/master/do_audit_for.sh)
+* [steps 21-22 auditing script](https://github.com/bewest/insulaudit-ssh-tools/blob/master/perform_audit)
+* [steps 23-24 clean up git push](https://github.com/bewest/insulaudit-ssh-tools/blob/master/clean_audit_work)
+* [steps 19 setup work area, git clone ; git pull](https://github.com/bewest/insulaudit-ssh-tools/blob/master/setup_audit_work)
 
-* [medical records checked into git](https://github.com/bewest/diabetes/blob/audit/2013-02-25-6-403332564/incoming.log)
+* [steps 24,25... medical records checked into git](https://github.com/bewest/diabetes/blob/audit/2013-02-25-6-403332564/incoming.log)
+  on a special branch.  Integration into compound medical record left for
+  another tool, this is about mechanics of getting records checked in regularly
+  and automatically.
 
 The resource can only be consumed once using this implementation; the whole
 pipeline is shut-down after a single open/close session on the virtual modem.
