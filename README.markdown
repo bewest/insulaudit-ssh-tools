@@ -28,6 +28,19 @@ See:
 ![system sequence part2](https://github.com/bewest/insulaudit-ssh-tools/blob/master/insulaudit-system-sequence-2.png?raw=true)
 
 
+### Help
+
+#### Integrate with compound document formats
+* http://ccda-scorecard.smartplatforms.org/static/ccdaScorecard/#/ - how to
+  format results as a compound document?
+* https://github.com/medevice-users/diabetes 
+* [how to encode glucose](https://gist.github.com/bewest/4965993)
+
+Also see
+* [insulin pump records](https://github.com/bewest/decoding-carelink/tree/rewriting)
+* [hacking diabetes](https://github.com/bewest/insulaudit/tree/master/hacking)
+
+
 ### `authorized_keys`
 * [ssh `authorized_keys`](http://man.he.net/man5/authorized_keys)
 
