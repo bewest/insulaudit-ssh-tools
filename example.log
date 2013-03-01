@@ -1,7 +1,7 @@
 
 /usr/bin/socat -d -d  tcp-l:9001,reuseaddr FILE:/dev/ttyUSB0,nonblock,b9600,raw
 now run ssh -L 9001:localhost:9001 bewest.io
-2013/02/28 17:44:38 socat[4271] N listening on AF=2 0.0.0.0:9001
+2013/02/28 17:36:45 socat[5423] N listening on AF=2 0.0.0.0:9001
 $0: /home/insulaudit/bin/do_audit_for.sh
 tool: audit
 session: 403332564
@@ -12,16 +12,16 @@ SHELL=/bin/sh
 TERM=screen-256color-bce
 BASE=/home/insulaudit/session
 FOO=BAR
-SSH_CLIENT=24.5.43.241 40751 22
+SSH_CLIENT=208.90.215.146 38871 22
 PHR_REPO=git@github.com:bewest/diabetes.git
 WORK_REMOTE=/home/insulaudit/sessions/6-403332564/remote.git
 WORK_CONF=/home/insulaudit/sessions/6-403332564/conf
-SSH_TTY=/dev/pts/0
+SSH_TTY=/dev/pts/18
 WORK_LOCAL=/home/insulaudit/sessions/6-403332564/local
-BRANCH=audit/2013-02-28-6-403332564
+BRANCH=audit/2013-03-01-6-403332564
 AUDIT_USER=bewest
 USER=insulaudit
-SSH_AUTH_SOCK=/tmp/ssh-ILGsd12573/agent.12573
+SSH_AUTH_SOCK=/tmp/ssh-xHlre16844/agent.16844
 SESSION_CONFIG=/home/insulaudit/sessions/6-403332564/conf/audit.config
 PATH=/home/insulaudit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 MAIL=/var/mail/insulaudit
@@ -30,7 +30,7 @@ LANG=en_US.UTF-8
 SHLVL=1
 HOME=/home/insulaudit
 LOGNAME=insulaudit
-SSH_CONNECTION=24.5.43.241 40751 10.170.185.103 22
+SSH_CONNECTION=208.90.215.146 38871 10.170.185.103 22
 AUDIT_UID=6
 WORK_BASE=/home/insulaudit/sessions/6-403332564
 SESS_KEY=6-403332564
@@ -54,26 +54,33 @@ git@github.com:bewest/diabetes.git
 /home/insulaudit/sessions/6-403332564/remote.git
 /home/insulaudit/sessions/6-403332564/local
 fatal: destination path '/home/insulaudit/sessions/6-403332564/local' already exists and is not an empty directory.
-fatal: A branch named 'audit/2013-02-28-6-403332564' already exists.
-Already on 'audit/2013-02-28-6-403332564'
+fatal: A branch named 'audit/2013-03-01-6-403332564' already exists.
+Already on 'audit/2013-03-01-6-403332564'
 From github.com:bewest/diabetes
- * branch            audit/2013-02-28-6-403332564 -> FETCH_HEAD
+ * branch            audit/2013-03-01-6-403332564 -> FETCH_HEAD
 Already up-to-date.
 CREATE VMODEM /home/insulaudit/bin/create_vmodem
 /home/insulaudit/bin/create_vmodem
 socat TCP-L:9001,reuseaddr pty,link=/home/insulaudit/sessions/6-403332564/vmodem,b9600,raw
-2013/02/28 17:52:39 socat[12623] N PTY is /dev/pts/18
+2013/03/01 01:34:51 socat[16899] N PTY is /dev/pts/19
 /home/insulaudit/bin/perform_audit
 SHOULD I USE VMODEM: /home/insulaudit/sessions/6-403332564/vmodem?
 insulaudit onetouch --port /home/insulaudit/sessions/6-403332564/vmodem sugars
 INFO:insulaudit.devices.clmm.proto:hello world
-2013/02/28 17:52:42 socat[12623] N opening connection to AF=2 127.0.0.1:9001
-2013/02/28 17:52:42 socat[12623] N successfully connected from local address AF=2 127.0.0.1:32847
-2013/02/28 17:52:42 socat[12623] N starting data transfer loop with FDs [3,3] and [4,4]
-2013/02/28 17:44:44 socat[4271] N accepting connection from AF=2 127.0.0.1:37914 on AF=2 127.0.0.1:9001
-2013/02/28 17:44:44 socat[4271] N opening character device "/dev/ttyUSB0" for reading and writing
-2013/02/28 17:44:44 socat[4271] N starting data transfer loop with FDs [4,4] and [3,3]
-('P 500,"WWW2A68BY","MG/DL " 05D9', rec.array([(datetime.datetime(2013, 2, 28, 10, 9, 54), 267),
+2013/03/01 01:34:54 socat[16899] N opening connection to AF=2 127.0.0.1:9001
+2013/03/01 01:34:54 socat[16899] N successfully connected from local address AF=2 127.0.0.1:32859
+2013/03/01 01:34:54 socat[16899] N starting data transfer loop with FDs [3,3] and [4,4]
+2013/02/28 17:36:53 socat[5423] N accepting connection from AF=2 127.0.0.1:38173 on AF=2 127.0.0.1:9001
+2013/02/28 17:36:53 socat[5423] N opening character device "/dev/ttyUSB0" for reading and writing
+2013/02/28 17:36:53 socat[5423] N starting data transfer loop with FDs [4,4] and [3,3]
+('P 500,"WWW2A68BY","MG/DL " 05D9', rec.array([(datetime.datetime(2013, 2, 28, 17, 26, 58), 104),
+       (datetime.datetime(2013, 2, 28, 15, 1, 9), 160),
+       (datetime.datetime(2013, 2, 28, 14, 53, 41), 174),
+       (datetime.datetime(2013, 2, 28, 14, 32, 49), 175),
+       (datetime.datetime(2013, 2, 28, 13, 7, 11), 187),
+       (datetime.datetime(2013, 2, 28, 12, 42, 41), 240),
+       (datetime.datetime(2013, 2, 28, 12, 25, 37), 256),
+       (datetime.datetime(2013, 2, 28, 10, 9, 54), 267),
        (datetime.datetime(2013, 2, 28, 0, 42, 8), 103),
        (datetime.datetime(2013, 2, 27, 22, 11, 40), 190),
        (datetime.datetime(2013, 2, 27, 22, 2, 4), 172),
@@ -565,16 +572,16 @@ INFO:insulaudit.devices.clmm.proto:hello world
        (datetime.datetime(2012, 12, 15, 19, 18, 23), 78),
        (datetime.datetime(2012, 12, 14, 22, 0, 29), 106),
        (datetime.datetime(2012, 12, 14, 20, 10, 58), 98),
-       (datetime.datetime(2012, 12, 14, 16, 10, 5), 143),
-       (datetime.datetime(2012, 12, 13, 23, 1, 31), 183),
-       (datetime.datetime(2012, 12, 13, 19, 28, 6), 133),
-       (datetime.datetime(2012, 12, 13, 12, 44, 21), 84),
-       (datetime.datetime(2012, 12, 13, 4, 0, 53), 102),
-       (datetime.datetime(2012, 12, 12, 23, 21, 9), 57),
-       (datetime.datetime(2012, 12, 12, 21, 47, 26), 171),
-       (datetime.datetime(2012, 12, 12, 20, 43, 3), 99)], 
+       (datetime.datetime(2012, 12, 14, 16, 10, 5), 143)], 
       dtype=[('time', '|O8'), ('value', '<i8')]))
 len glucose: 2
+2013-02-28T17:26:58	104
+2013-02-28T15:01:09	160
+2013-02-28T14:53:41	174
+2013-02-28T14:32:49	175
+2013-02-28T13:07:11	187
+2013-02-28T12:42:41	240
+2013-02-28T12:25:37	256
 2013-02-28T10:09:54	267
 2013-02-28T00:42:08	103
 2013-02-27T22:11:40	190
@@ -748,8 +755,7 @@ len glucose: 2
 2013-02-06T20:44:55	72
 2013-02-06T13:27:36	353
 2013-02-06T01:35:26	44
-2013-02-06T01:17:12	462013/02/28 17:45:39 socat[4271] N socket 1 (fd 4) is at EOF
-
+2013-02-06T01:17:12	46
 2013-02-05T23:18:31	88
 2013-02-05T19:48:28	92
 2013-02-05T19:09:16	100
@@ -1069,31 +1075,25 @@ len glucose: 2
 2012-12-14T22:00:29	106
 2012-12-14T20:10:58	98
 2012-12-14T16:10:05	143
-2012-12-13T23:01:31	183
-2012-12-13T19:28:06	133
-2012-12-13T12:44:21	84
-2012-12-13T04:00:53	102
-2012-12-12T23:21:09	57
-2012-12-12T21:47:26	171
-2012-12-12T20:43:03	99
-2013/02/28 17:53:37 socat[12623] N read(3, 0xd74060, 8192): Input/output error (probably PTY closed)
-2013/02/28 17:53:37 socat[12623] N socket 1 (fd 3) is at EOF
+2013/03/01 01:35:50 socat[16899] N read(3, 0x8fa060, 8192): Input/output error (probably PTY closed)
+2013/03/01 01:35:50 socat[16899] N socket 1 (fd 3) is at EOF
 /home/insulaudit/bin/clean_audit_work
 add 'incoming.log'
-[audit/2013-02-28-6-403332564 ea7683b] commit 6-403332564 2013-02-28T17:53:37
+[audit/2013-03-01-6-403332564 3f429a3] commit 6-403332564 2013-03-01T01:35:51
  1 file changed, 1000 insertions(+), 2 deletions(-)
-2013/02/28 17:53:38 socat[12623] N exiting with status 0
-2013/02/28 17:45:39 socat[4271] N exiting with status 0
+2013/02/28 17:37:49 socat[5423] N socket 1 (fd 4) is at EOF
+2013/03/01 01:35:51 socat[16899] N exiting with status 0
+2013/02/28 17:37:49 socat[5423] N exiting with status 0
 Counting objects: 5, done.
 Compressing objects:  33% (1/3)   Compressing objects:  66% (2/3)   Compressing objects: 100% (3/3)   Compressing objects: 100% (3/3), done.
 Writing objects:  33% (1/3)   Writing objects:  66% (2/3)   Writing objects: 100% (3/3)   Writing objects: 100% (3/3), 8.23 KiB, done.
 Total 3 (delta 1), reused 0 (delta 0)
 To git@github.com:bewest/diabetes.git
-   b853e48..ea7683b  audit/2013-02-28-6-403332564 -> audit/2013-02-28-6-403332564
+   6d38c85..3f429a3  audit/2013-03-01-6-403332564 -> audit/2013-03-01-6-403332564
 ?? rm /home/insulaudit/sessions/6-403332564
   PID TTY          TIME CMD
-12574 pts/0    00:00:00 sh
-12575 pts/0    00:00:00 do_audit_for.sh
-12801 pts/0    00:00:00 ps
+16845 pts/18   00:00:00 sh
+16846 pts/18   00:00:00 do_audit_for.sh
+17077 pts/18   00:00:00 ps
 THIS IS MY SPECIAL LOGIN SHELL. HANGING UP.
 Connection to bewest.io closed.
