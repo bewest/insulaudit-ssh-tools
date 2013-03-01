@@ -18,6 +18,11 @@ pipeline is shut-down after a single open/close session on the virtual modem.
 
 ## Details
 See:
+
+![system sequence part1](https://github.com/bewest/insulaudit-ssh-tools/blob/master/insulaudit-system-sequence-1.png?raw=true)
+![system sequence part2](https://github.com/bewest/insulaudit-ssh-tools/blob/master/insulaudit-system-sequence0.png?raw=true)
+
+
 ### `authorized_keys`
 * [ssh `authorized_keys`](http://man.he.net/man5/authorized_keys)
 
