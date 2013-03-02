@@ -44,6 +44,14 @@ if [[ $AUDIT_TOOL == "audit" ]] ; then
   sleep 2
   perform_audit
   clean_audit_work
+else
+  env
+  echo "HOWDY, $user"
+  echo "DID NOT UNDERSTAND:" $AUDIT_TOOL
+  echo "YOUR COMMAND:"
+  ssh-add -l
+  echo $SSH_ORIGINAL_COMMAND
+
 fi
 ps
 echo "THIS IS MY SPECIAL LOGIN SHELL. HANGING UP."
