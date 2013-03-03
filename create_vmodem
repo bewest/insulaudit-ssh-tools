@@ -8,10 +8,11 @@ function do_socat ( ) {
   vmodem=${VMODEM-$WORK_BASE/vmodem}
   port=$(git config -f $WORK_CONF/audit.config --get serialtonet.port)
   baud=$(git config -f $WORK_CONF/audit.config --get serialtonet.baud || echo 9600)
-  echo socat TCP-L:$port,reuseaddr pty,link=$vmodem,b${baud},raw
-  exec  socat -d -d \
-        pty,link=$vmodem,b${baud},waitslave,raw \
-        TCP:localhost:$port 
+  ADDR1="pty,link=$vmodem,waitslave,raw,b${baud}"
+  ADDR2="TCP:localhost:$port"
+  do_socat="-d -d $ADDR1 $ADDR2"
+  echo socat $do_socat
+  exec socat ${do_socat}
 }
 
 ( do_socat || echo "SOCAT DIED" ) &

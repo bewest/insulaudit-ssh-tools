@@ -4,15 +4,23 @@
 
 echo $0
 
-echo SHOULD I USE VMODEM: $VMODEM? $( test -f $VMODEM )
+echo -n SHOULD I USE VMODEM: $VMODEM?
+echo $( test -a $VMODEM && echo "yes" || echo "NO")
 if [[ -a $VMODEM ]] ; then
-  #echo "SNIFF FIRMWARE AND VERSION"
+
+  auditor="mini.py"
+  args=$VMODEM
+  auditor="insulaudit"
+  args="onetouch --port $VMODEM hello"
+
   (
   #echo insulaudit onetouch --port $VMODEM hello
   #insulaudit onetouch --port $VMODEM hello 
-  echo insulaudit onetouch --port $VMODEM sugars
-  insulaudit onetouch --port $VMODEM sugars
-  ) 2>&1 | tee $WORK_LOCAL/incoming.log
+  echo $auditor $args;
+  # insulaudit onetouch --port $VMODEM sugars
+  ${auditor} $args
+  ) 2>&1 # | tee $WORK_LOCAL/incoming.log
+
 else
   echo $VMODEM does not exist
 fi
