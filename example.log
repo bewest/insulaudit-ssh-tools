@@ -1,7 +1,7 @@
 
 /usr/bin/socat -d -d  tcp-l:9001,reuseaddr FILE:/dev/ttyUSB0,nonblock,b9600,raw
 now run ssh -L 9001:localhost:9001 bewest.io
-2013/02/25 00:14:30 socat[55421] N listening on AF=2 0.0.0.0:9001
+2013/02/28 17:36:45 socat[5423] N listening on AF=2 0.0.0.0:9001
 $0: /home/insulaudit/bin/do_audit_for.sh
 tool: audit
 session: 403332564
@@ -12,16 +12,16 @@ SHELL=/bin/sh
 TERM=screen-256color-bce
 BASE=/home/insulaudit/session
 FOO=BAR
-SSH_CLIENT=24.5.43.241 36969 22
+SSH_CLIENT=208.90.215.146 38871 22
 PHR_REPO=git@github.com:bewest/diabetes.git
 WORK_REMOTE=/home/insulaudit/sessions/6-403332564/remote.git
 WORK_CONF=/home/insulaudit/sessions/6-403332564/conf
 SSH_TTY=/dev/pts/18
 WORK_LOCAL=/home/insulaudit/sessions/6-403332564/local
-BRANCH=audit/2013-02-25-6-403332564
+BRANCH=audit/2013-03-01-6-403332564
 AUDIT_USER=bewest
 USER=insulaudit
-SSH_AUTH_SOCK=/tmp/ssh-EPbIXI6772/agent.6772
+SSH_AUTH_SOCK=/tmp/ssh-xHlre16844/agent.16844
 SESSION_CONFIG=/home/insulaudit/sessions/6-403332564/conf/audit.config
 PATH=/home/insulaudit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 MAIL=/var/mail/insulaudit
@@ -30,7 +30,7 @@ LANG=en_US.UTF-8
 SHLVL=1
 HOME=/home/insulaudit
 LOGNAME=insulaudit
-SSH_CONNECTION=24.5.43.241 36969 10.170.185.103 22
+SSH_CONNECTION=208.90.215.146 38871 10.170.185.103 22
 AUDIT_UID=6
 WORK_BASE=/home/insulaudit/sessions/6-403332564
 SESS_KEY=6-403332564
@@ -54,26 +54,73 @@ git@github.com:bewest/diabetes.git
 /home/insulaudit/sessions/6-403332564/remote.git
 /home/insulaudit/sessions/6-403332564/local
 fatal: destination path '/home/insulaudit/sessions/6-403332564/local' already exists and is not an empty directory.
-fatal: A branch named 'audit/2013-02-25-6-403332564' already exists.
-Already on 'audit/2013-02-25-6-403332564'
+fatal: A branch named 'audit/2013-03-01-6-403332564' already exists.
+Already on 'audit/2013-03-01-6-403332564'
 From github.com:bewest/diabetes
- * branch            audit/2013-02-25-6-403332564 -> FETCH_HEAD
+ * branch            audit/2013-03-01-6-403332564 -> FETCH_HEAD
 Already up-to-date.
 CREATE VMODEM /home/insulaudit/bin/create_vmodem
 /home/insulaudit/bin/create_vmodem
 socat TCP-L:9001,reuseaddr pty,link=/home/insulaudit/sessions/6-403332564/vmodem,b9600,raw
-2013/02/25 08:12:39 socat[6817] N PTY is /dev/pts/19
+2013/03/01 01:34:51 socat[16899] N PTY is /dev/pts/19
 /home/insulaudit/bin/perform_audit
 SHOULD I USE VMODEM: /home/insulaudit/sessions/6-403332564/vmodem?
 insulaudit onetouch --port /home/insulaudit/sessions/6-403332564/vmodem sugars
 INFO:insulaudit.devices.clmm.proto:hello world
-2013/02/25 08:12:42 socat[6817] N opening connection to AF=2 127.0.0.1:9001
-2013/02/25 00:14:37 socat[55421] N accepting connection from AF=2 127.0.0.1:34440 on AF=2 127.0.0.1:9001
-2013/02/25 00:14:37 socat[55421] N opening character device "/dev/ttyUSB0" for reading and writing
-2013/02/25 08:12:42 socat[6817] N successfully connected from local address AF=2 127.0.0.1:32803
-2013/02/25 08:12:42 socat[6817] N starting data transfer loop with FDs [3,3] and [4,4]
-2013/02/25 00:14:40 socat[55421] N starting data transfer loop with FDs [4,4] and [3,3]
-('P 500,"WWW2A68BY","MG/DL " 05D9', rec.array([(datetime.datetime(2013, 2, 25, 0, 11, 8), 177),
+2013/03/01 01:34:54 socat[16899] N opening connection to AF=2 127.0.0.1:9001
+2013/03/01 01:34:54 socat[16899] N successfully connected from local address AF=2 127.0.0.1:32859
+2013/03/01 01:34:54 socat[16899] N starting data transfer loop with FDs [3,3] and [4,4]
+2013/02/28 17:36:53 socat[5423] N accepting connection from AF=2 127.0.0.1:38173 on AF=2 127.0.0.1:9001
+2013/02/28 17:36:53 socat[5423] N opening character device "/dev/ttyUSB0" for reading and writing
+2013/02/28 17:36:53 socat[5423] N starting data transfer loop with FDs [4,4] and [3,3]
+('P 500,"WWW2A68BY","MG/DL " 05D9', rec.array([(datetime.datetime(2013, 2, 28, 17, 26, 58), 104),
+       (datetime.datetime(2013, 2, 28, 15, 1, 9), 160),
+       (datetime.datetime(2013, 2, 28, 14, 53, 41), 174),
+       (datetime.datetime(2013, 2, 28, 14, 32, 49), 175),
+       (datetime.datetime(2013, 2, 28, 13, 7, 11), 187),
+       (datetime.datetime(2013, 2, 28, 12, 42, 41), 240),
+       (datetime.datetime(2013, 2, 28, 12, 25, 37), 256),
+       (datetime.datetime(2013, 2, 28, 10, 9, 54), 267),
+       (datetime.datetime(2013, 2, 28, 0, 42, 8), 103),
+       (datetime.datetime(2013, 2, 27, 22, 11, 40), 190),
+       (datetime.datetime(2013, 2, 27, 22, 2, 4), 172),
+       (datetime.datetime(2013, 2, 27, 21, 59, 20), 205),
+       (datetime.datetime(2013, 2, 27, 21, 55, 12), 217),
+       (datetime.datetime(2013, 2, 27, 21, 51, 33), 203),
+       (datetime.datetime(2013, 2, 27, 21, 47, 8), 204),
+       (datetime.datetime(2013, 2, 27, 21, 38, 13), 198),
+       (datetime.datetime(2013, 2, 27, 21, 29, 35), 189),
+       (datetime.datetime(2013, 2, 27, 21, 13, 46), 166),
+       (datetime.datetime(2013, 2, 27, 20, 19, 9), 114),
+       (datetime.datetime(2013, 2, 27, 19, 13, 59), 77),
+       (datetime.datetime(2013, 2, 27, 18, 43, 48), 40),
+       (datetime.datetime(2013, 2, 27, 18, 15, 43), 99),
+       (datetime.datetime(2013, 2, 27, 17, 21, 58), 206),
+       (datetime.datetime(2013, 2, 27, 16, 42, 37), 332),
+       (datetime.datetime(2013, 2, 27, 14, 4, 33), 128),
+       (datetime.datetime(2013, 2, 27, 13, 49, 43), 142),
+       (datetime.datetime(2013, 2, 27, 10, 2, 33), 154),
+       (datetime.datetime(2013, 2, 27, 5, 26, 17), 106),
+       (datetime.datetime(2013, 2, 27, 1, 45, 24), 98),
+       (datetime.datetime(2013, 2, 27, 1, 39, 55), 89),
+       (datetime.datetime(2013, 2, 27, 0, 44, 26), 92),
+       (datetime.datetime(2013, 2, 26, 21, 43, 38), 244),
+       (datetime.datetime(2013, 2, 26, 21, 15, 35), 246),
+       (datetime.datetime(2013, 2, 26, 20, 32, 5), 172),
+       (datetime.datetime(2013, 2, 26, 19, 24, 4), 187),
+       (datetime.datetime(2013, 2, 26, 16, 51, 49), 94),
+       (datetime.datetime(2013, 2, 26, 12, 12, 45), 318),
+       (datetime.datetime(2013, 2, 26, 1, 11, 19), 167),
+       (datetime.datetime(2013, 2, 25, 22, 46, 7), 154),
+       (datetime.datetime(2013, 2, 25, 21, 10, 14), 359),
+       (datetime.datetime(2013, 2, 25, 20, 48, 27), 219),
+       (datetime.datetime(2013, 2, 25, 19, 10, 48), 156),
+       (datetime.datetime(2013, 2, 25, 17, 36, 43), 104),
+       (datetime.datetime(2013, 2, 25, 16, 24, 19), 153),
+       (datetime.datetime(2013, 2, 25, 15, 40, 44), 217),
+       (datetime.datetime(2013, 2, 25, 13, 41, 20), 277),
+       (datetime.datetime(2013, 2, 25, 13, 17, 2), 251),
+       (datetime.datetime(2013, 2, 25, 0, 11, 8), 177),
        (datetime.datetime(2013, 2, 24, 23, 23, 34), 178),
        (datetime.datetime(2013, 2, 24, 22, 45), 169),
        (datetime.datetime(2013, 2, 24, 21, 22, 58), 131),
@@ -525,56 +572,56 @@ INFO:insulaudit.devices.clmm.proto:hello world
        (datetime.datetime(2012, 12, 15, 19, 18, 23), 78),
        (datetime.datetime(2012, 12, 14, 22, 0, 29), 106),
        (datetime.datetime(2012, 12, 14, 20, 10, 58), 98),
-       (datetime.datetime(2012, 12, 14, 16, 10, 5), 143),
-       (datetime.datetime(2012, 12, 13, 23, 1, 31), 183),
-       (datetime.datetime(2012, 12, 13, 19, 28, 6), 133),
-       (datetime.datetime(2012, 12, 13, 12, 44, 21), 84),
-       (datetime.datetime(2012, 12, 13, 4, 0, 53), 102),
-       (datetime.datetime(2012, 12, 12, 23, 21, 9), 57),
-       (datetime.datetime(2012, 12, 12, 21, 47, 26), 171),
-       (datetime.datetime(2012, 12, 12, 20, 43, 3), 99),
-       (datetime.datetime(2012, 12, 12, 19, 17, 45), 156),
-       (datetime.datetime(2012, 12, 12, 18, 33, 47), 117),
-       (datetime.datetime(2012, 12, 12, 17, 46, 50), 44),
-       (datetime.datetime(2012, 12, 11, 21, 5, 59), 138),
-       (datetime.datetime(2012, 12, 11, 19, 58, 43), 63),
-       (datetime.datetime(2012, 12, 11, 18, 1, 6), 156),
-       (datetime.datetime(2012, 12, 11, 17, 28, 52), 195),
-       (datetime.datetime(2012, 12, 11, 16, 57, 53), 219),
-       (datetime.datetime(2012, 12, 11, 15, 18, 33), 225),
-       (datetime.datetime(2012, 12, 11, 14, 23, 8), 236),
-       (datetime.datetime(2012, 12, 11, 6, 17, 51), 77),
-       (datetime.datetime(2012, 12, 10, 22, 1), 325),
-       (datetime.datetime(2012, 12, 10, 14, 56, 50), 124),
-       (datetime.datetime(2012, 12, 10, 14, 3, 21), 153),
-       (datetime.datetime(2012, 12, 10, 4, 46, 27), 411),
-       (datetime.datetime(2012, 12, 9, 20, 29, 58), 59),
-       (datetime.datetime(2012, 12, 9, 18, 12, 18), 170),
-       (datetime.datetime(2012, 12, 9, 13, 45, 24), 84),
-       (datetime.datetime(2012, 12, 9, 12, 44, 29), 145),
-       (datetime.datetime(2012, 12, 9, 11, 27, 58), 118),
-       (datetime.datetime(2012, 12, 8, 23, 49, 38), 216),
-       (datetime.datetime(2012, 12, 8, 22, 4, 55), 143),
-       (datetime.datetime(2012, 12, 8, 20, 51), 105),
-       (datetime.datetime(2012, 12, 8, 19, 7, 47), 103),
-       (datetime.datetime(2012, 12, 8, 17, 8, 55), 79),
-       (datetime.datetime(2012, 12, 7, 21, 28, 27), 74),
-       (datetime.datetime(2012, 12, 7, 16, 35, 14), 68),
-       (datetime.datetime(2012, 12, 6, 19, 43, 27), 95),
-       (datetime.datetime(2012, 12, 6, 18, 24), 111),
-       (datetime.datetime(2012, 12, 6, 13, 45, 38), 165),
-       (datetime.datetime(2012, 12, 6, 12, 24, 45), 274),
-       (datetime.datetime(2012, 12, 6, 3, 52, 24), 139),
-       (datetime.datetime(2012, 12, 6, 0, 52, 9), 80),
-       (datetime.datetime(2012, 12, 6, 0, 27, 8), 53),
-       (datetime.datetime(2012, 12, 5, 1, 0), 67),
-       (datetime.datetime(2012, 12, 4, 21, 24, 55), 138),
-       (datetime.datetime(2012, 12, 4, 19, 42, 55), 198),
-       (datetime.datetime(2012, 12, 4, 13, 44, 50), 174),
-       (datetime.datetime(2012, 12, 3, 20, 23, 11), 126),
-       (datetime.datetime(2012, 12, 3, 14, 16, 17), 77)], 
+       (datetime.datetime(2012, 12, 14, 16, 10, 5), 143)], 
       dtype=[('time', '|O8'), ('value', '<i8')]))
 len glucose: 2
+2013-02-28T17:26:58	104
+2013-02-28T15:01:09	160
+2013-02-28T14:53:41	174
+2013-02-28T14:32:49	175
+2013-02-28T13:07:11	187
+2013-02-28T12:42:41	240
+2013-02-28T12:25:37	256
+2013-02-28T10:09:54	267
+2013-02-28T00:42:08	103
+2013-02-27T22:11:40	190
+2013-02-27T22:02:04	172
+2013-02-27T21:59:20	205
+2013-02-27T21:55:12	217
+2013-02-27T21:51:33	203
+2013-02-27T21:47:08	204
+2013-02-27T21:38:13	198
+2013-02-27T21:29:35	189
+2013-02-27T21:13:46	166
+2013-02-27T20:19:09	114
+2013-02-27T19:13:59	77
+2013-02-27T18:43:48	40
+2013-02-27T18:15:43	99
+2013-02-27T17:21:58	206
+2013-02-27T16:42:37	332
+2013-02-27T14:04:33	128
+2013-02-27T13:49:43	142
+2013-02-27T10:02:33	154
+2013-02-27T05:26:17	106
+2013-02-27T01:45:24	98
+2013-02-27T01:39:55	89
+2013-02-27T00:44:26	92
+2013-02-26T21:43:38	244
+2013-02-26T21:15:35	246
+2013-02-26T20:32:05	172
+2013-02-26T19:24:04	187
+2013-02-26T16:51:49	94
+2013-02-26T12:12:45	318
+2013-02-26T01:11:19	167
+2013-02-25T22:46:07	154
+2013-02-25T21:10:14	359
+2013-02-25T20:48:27	219
+2013-02-25T19:10:48	156
+2013-02-25T17:36:43	104
+2013-02-25T16:24:19	153
+2013-02-25T15:40:44	217
+2013-02-25T13:41:20	277
+2013-02-25T13:17:02	251
 2013-02-25T00:11:08	177
 2013-02-24T23:23:34	178
 2013-02-24T22:45:00	169
@@ -1009,8 +1056,7 @@ len glucose: 2
 2012-12-19T10:15:04	268
 2012-12-19T03:26:45	104
 2012-12-18T23:07:18	59
-2012-12-18T22:22:55	102013/02/25 00:15:32 socat[55421] N socket 1 (fd 4) is at EOF
-2
+2012-12-18T22:22:55	102
 2012-12-18T21:15:19	151
 2012-12-18T19:23:43	84
 2012-12-18T17:50:58	142
@@ -1029,74 +1075,25 @@ len glucose: 2
 2012-12-14T22:00:29	106
 2012-12-14T20:10:58	98
 2012-12-14T16:10:05	143
-2012-12-13T23:01:31	183
-2012-12-13T19:28:06	133
-2012-12-13T12:44:21	84
-2012-12-13T04:00:53	102
-2012-12-12T23:21:09	57
-2012-12-12T21:47:26	171
-2012-12-12T20:43:03	99
-2012-12-12T19:17:45	156
-2012-12-12T18:33:47	117
-2012-12-12T17:46:50	44
-2012-12-11T21:05:59	138
-2012-12-11T19:58:43	63
-2012-12-11T18:01:06	156
-2012-12-11T17:28:52	195
-2012-12-11T16:57:53	219
-2012-12-11T15:18:33	225
-2012-12-11T14:23:08	236
-2012-12-11T06:17:51	77
-2012-12-10T22:01:00	325
-2012-12-10T14:56:50	124
-2012-12-10T14:03:21	153
-2012-12-10T04:46:27	411
-2012-12-09T20:29:58	59
-2012-12-09T18:12:18	170
-2012-12-09T13:45:24	84
-2012-12-09T12:44:29	145
-2012-12-09T11:27:58	118
-2012-12-08T23:49:38	216
-2012-12-08T22:04:55	143
-2012-12-08T20:51:00	105
-2012-12-08T19:07:47	103
-2012-12-08T17:08:55	79
-2012-12-07T21:28:27	74
-2012-12-07T16:35:14	68
-2012-12-06T19:43:27	95
-2012-12-06T18:24:00	111
-2012-12-06T13:45:38	165
-2012-12-06T12:24:45	274
-2012-12-06T03:52:24	139
-2012-12-06T00:52:09	80
-2012-12-06T00:27:08	53
-2012-12-05T01:00:00	67
-2012-12-04T21:24:55	138
-2012-12-04T19:42:55	198
-2012-12-04T13:44:50	174
-2012-12-03T20:23:11	126
-2012-12-03T14:16:17	77
-2013/02/25 08:13:37 socat[6817] N read(3, 0x1d73060, 8192): Input/output error (probably PTY closed)
-2013/02/25 08:13:37 socat[6817] N socket 1 (fd 3) is at EOF
+2013/03/01 01:35:50 socat[16899] N read(3, 0x8fa060, 8192): Input/output error (probably PTY closed)
+2013/03/01 01:35:50 socat[16899] N socket 1 (fd 3) is at EOF
 /home/insulaudit/bin/clean_audit_work
-/home/insulaudit/bin/clean_audit_work: line 11: read_config: command not found
-/home/insulaudit/bin/clean_audit_work: line 12: read_config: command not found
-/home/insulaudit/bin/clean_audit_work: line 13: read_config: command not found
 add 'incoming.log'
-[audit/2013-02-25-6-403332564 36b17ef] commit 6-403332564 2013-02-25T08:13:37
- 1 file changed, 1003 insertions(+), 3 deletions(-)
-2013/02/25 08:13:38 socat[6817] N exiting with status 0
-2013/02/25 00:15:33 socat[55421] N exiting with status 0
+[audit/2013-03-01-6-403332564 3f429a3] commit 6-403332564 2013-03-01T01:35:51
+ 1 file changed, 1000 insertions(+), 2 deletions(-)
+2013/02/28 17:37:49 socat[5423] N socket 1 (fd 4) is at EOF
+2013/03/01 01:35:51 socat[16899] N exiting with status 0
+2013/02/28 17:37:49 socat[5423] N exiting with status 0
 Counting objects: 5, done.
 Compressing objects:  33% (1/3)   Compressing objects:  66% (2/3)   Compressing objects: 100% (3/3)   Compressing objects: 100% (3/3), done.
-Writing objects:  33% (1/3)   Writing objects:  66% (2/3)   Writing objects: 100% (3/3)   Writing objects: 100% (3/3), 8.22 KiB, done.
+Writing objects:  33% (1/3)   Writing objects:  66% (2/3)   Writing objects: 100% (3/3)   Writing objects: 100% (3/3), 8.23 KiB, done.
 Total 3 (delta 1), reused 0 (delta 0)
 To git@github.com:bewest/diabetes.git
-   4a7161c..36b17ef  audit/2013-02-25-6-403332564 -> audit/2013-02-25-6-403332564
+   6d38c85..3f429a3  audit/2013-03-01-6-403332564 -> audit/2013-03-01-6-403332564
 ?? rm /home/insulaudit/sessions/6-403332564
   PID TTY          TIME CMD
- 6773 pts/18   00:00:00 sh
- 6774 pts/18   00:00:00 do_audit_for.sh
- 6962 pts/18   00:00:00 ps
+16845 pts/18   00:00:00 sh
+16846 pts/18   00:00:00 do_audit_for.sh
+17077 pts/18   00:00:00 ps
 THIS IS MY SPECIAL LOGIN SHELL. HANGING UP.
 Connection to bewest.io closed.

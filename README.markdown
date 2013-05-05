@@ -1,7 +1,50 @@
 # ssh + git hacks
 
+## Quick intro
+This method automatically forwards serial device over ssh for one-time consumption.
+After resource is consumed once, all ports and sessions are closed cleanly.
+
+* [steps 1-12 server side registration/config](https://github.com/ehwest/cloudify)
+* [steps 1-19 beaglebone firmware](https://github.com/n-west/insulware)
+* [gist of ~6-20 beaglebone](https://gist.github.com/bewest/4741016)
+* Here's [example output](https://github.com/bewest/insulaudit-ssh-tools/blob/master/example.log) with actual data of `steps 16-25`
+* [steps 15, beaglebone forward remote beaglebone/remote socat via ssh](https://github.com/bewest/insulaudit-ssh-tools/blob/master/socat_forward_stick.sh) this executes on beaglebone after step 14,15, and manages the rest of the process.
+
+* [step 19, 20, server side socat](https://github.com/bewest/insulaudit-ssh-tools/blob/master/create_vmodem)
+* [steps 17-25 server side authorize port+shell+resource](https://github.com/bewest/insulaudit-ssh-tools/blob/master/do_audit_for.sh)
+* [steps 21-22 auditing script](https://github.com/bewest/insulaudit-ssh-tools/blob/master/perform_audit)
+* [steps 23-24 clean up git push](https://github.com/bewest/insulaudit-ssh-tools/blob/master/clean_audit_work)
+* [steps 19 setup work area, git clone ; git pull](https://github.com/bewest/insulaudit-ssh-tools/blob/master/setup_audit_work)
+
+* [steps 24,25... medical records checked into git](https://github.com/bewest/diabetes/blob/audit/2013-02-25-6-403332564/incoming.log)
+  on a special branch.  Integration into compound medical record left for
+  another tool, this is about mechanics of getting records checked in regularly
+  and automatically.
+
+The resource can only be consumed once using this implementation; the whole
+pipeline is shut-down after a single open/close session on the virtual modem.
+
+## Details
 See:
-## `authorized_keys`
+
+![system sequence part1](https://github.com/bewest/insulaudit-ssh-tools/blob/master/insulaudit-system-sequence-1.png?raw=true)
+![system sequence part2](https://github.com/bewest/insulaudit-ssh-tools/blob/master/insulaudit-system-sequence-2.png?raw=true)
+
+
+### Help
+
+#### Integrate with compound document formats
+* http://ccda-scorecard.smartplatforms.org/static/ccdaScorecard/#/ - how to
+  format results as a compound document?
+* https://github.com/medevice-users/diabetes 
+* [how to encode glucose](https://gist.github.com/bewest/4965993)
+
+Also see
+* [insulin pump records](https://github.com/bewest/decoding-carelink/tree/rewriting)
+* [hacking diabetes](https://github.com/bewest/insulaudit/tree/master/hacking)
+
+
+### `authorized_keys`
 * [ssh `authorized_keys`](http://man.he.net/man5/authorized_keys)
 
 Gitolite and svnserve use this technique to map an authenticated key
@@ -83,7 +126,8 @@ auditing.
 
 Here's stack overflow on the subject:
 * [restricting access to git](http://superuser.com/questions/299927/can-you-specify-git-shell-in-ssh-authorized-keys-to-restrict-access-to-only-git)
-* [how gitolite uses ssh](http://sitaramc.github.com/gitolite/glssh.html)
+
+### how gitolite uses ssh](http://sitaramc.github.com/gitolite/glssh.html)
 
 ```
 restricting shell access/distinguishing one user from another
@@ -127,7 +171,7 @@ Looks like @sitaramc tries very hard to keep duplicate entries out,
 and to keep the "curated" list separate from any manually added
 entries.
 
-## gitolite
+### gitolite
 
 You can emulate
 [gitolite-shell](https://github.com/sitaramc/gitolite/blob/master/src/gitolite-shell)
@@ -140,8 +184,48 @@ interact with some out of band service as well.
 
 Action here is something like "upload, recieve, etc...." 
 
+### Extending gitolite
+* http://sitaramc.github.com/gitolite/cust.html#pushcode
 
-## git hacks
+#### Proposed extensions?
+
+Some ideas on how to transition these scripts to be gitolite commands
+* `upload-helper []`
+
+* `burn-branch <branch-name> <helper>` - burn a branch into a repo using this idiom:
+```bash
+git init new-content
+cd new-content
+# burn a branch
+git checkout -b audit-branch && git status || git checkout audit-branch
+# run ${HELPER}
+HELPER='echo "new content" new-content/incoming.log'
+${HELPER}
+git add -v .
+git commit -avm 'burned new content into my branch'
+cd ..
+git clone --bare git@foo.io:myrepo.git remote.git
+# something like
+git --git-dir remote.git remote add local new-content
+git --git-dir fetch local
+git --git-dir rebase --onto audit-branch audit-branch..local/audit-branch
+git --git-dir push origin audit-branch
+# test -n $DEBUG && git --git-dir push -f origin audit-branch #???
+```
+
+* `stitch-branch <onto> <branch-name> <helper>` - specify a domain specific
+  helper to resolve differences in newly generated content (eg, for regular
+  auditing, where conflicts can be regularly resolved automatically.)
+```bash
+# something like
+git --git-dir rebase --onto audit-branch audit-branch..local/audit-branch
+${HELPER}
+git add -v .
+git commit -avm 'burned new content into my branch'
+git rebase --continue
+```
+
+#### git hacks
 This one is interesting:
 https://github.com/progrium/gitreceive/blob/master/gitreceive
 
