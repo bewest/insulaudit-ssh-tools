@@ -10,16 +10,18 @@ if [[ -a $VMODEM ]] ; then
 
   auditor="mini.py"
   args=$VMODEM
-  auditor="insulaudit"
-  args="onetouch --port $VMODEM hello"
+  #auditor="insulaudit"
+  #args="mini --port $VMODEM hello"
 
   (
+  echo "INCOMING: $(date +%F)"
+  env
   #echo insulaudit onetouch --port $VMODEM hello
   #insulaudit onetouch --port $VMODEM hello 
   echo $auditor $args;
   # insulaudit onetouch --port $VMODEM sugars
   ${auditor} $args
-  ) 2>&1 # | tee $WORK_LOCAL/incoming.log
+  ) 2>&1 | tee $WORK_LOCAL/incoming.log
 
 else
   echo $VMODEM does not exist
