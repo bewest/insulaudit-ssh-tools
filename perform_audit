@@ -23,7 +23,7 @@ if [[ -a $VMODEM ]] ; then
   ${auditor} $args | tee $WORK_BASE/sugars.txt
   ) 2>&1 | tee $WORK_LOCAL/incoming.log
   DATA_URL=$(read_config registration.dataurl)
-  curl --form upload=@$WORK_BASE/sugars.txt --form submit=sugars $DATA_URL
+  curl --form userfile=@$WORK_BASE/sugars.txt --form submit=sugars $DATA_URL
 
 else
   echo $VMODEM does not exist
