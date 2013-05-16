@@ -31,6 +31,9 @@ See:
 ![system sequence part2](https://github.com/bewest/insulaudit-ssh-tools/blob/master/insulaudit-system-sequence-2.png?raw=true)
 
 
+![3g proxy serial/usb devices](https://raw.github.com/medevice-users/diabetes/master/3g-beagle-nextlink.JPG)
+![3g beagle proxy serial/usb medical devices](https://raw.github.com/bewest/insulaudit/master/hacking/carelink-bayer-usb-modem-beaglebone.jpg)
+
 ### Help
 
 #### Integrate with compound document formats
