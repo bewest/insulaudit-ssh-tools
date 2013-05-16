@@ -20,8 +20,10 @@ if [[ -a $VMODEM ]] ; then
   #insulaudit onetouch --port $VMODEM hello 
   echo $auditor $args;
   # insulaudit onetouch --port $VMODEM sugars
-  ${auditor} $args
+  ${auditor} $args | tee $WORK_BASE/sugars.txt
   ) 2>&1 | tee $WORK_LOCAL/incoming.log
+  DATA_URL=$(read_config registration.dataurl)
+  curl --data=@$WORK_BASE/sugars.txt $DATA_URL
 
 else
   echo $VMODEM does not exist
