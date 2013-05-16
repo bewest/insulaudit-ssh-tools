@@ -10,6 +10,11 @@ if [[ -a $VMODEM ]] ; then
 
   auditor="mini.py"
   args=$VMODEM
+  if [[ $(read_config deviceDetect.auditor) == "mini.py" ]] ; then
+    echo "USING $auditor"
+  else
+    echo "using insulaudit?"
+  fi
   #auditor="insulaudit"
   #args="mini --port $VMODEM hello"
 
