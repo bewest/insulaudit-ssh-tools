@@ -5,7 +5,7 @@
 echo $0
 mkdir -p $WORK_BASE
 config_url="https://transactionalweb.com/cloud/configfile.html?s=${AUDIT_SESSION}&u=${AUDIT_UID}"
-echo $config_url
+echo "CONFIG_URL" $config_url
 mkdir -p $WORK_CONF
 
 

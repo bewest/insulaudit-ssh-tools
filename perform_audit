@@ -8,12 +8,18 @@ echo -n SHOULD I USE VMODEM: $VMODEM?
 echo $( test -a $VMODEM && echo "yes" || echo "NO")
 if [[ -a $VMODEM ]] ; then
 
-  auditor="mini.py"
+  auditor=$(read_config deviceDetect.auditor)
   args=$VMODEM
-  if [[ $(read_config deviceDetect.auditor) == "mini.py" ]] ; then
+  if [[ "$AUDIT_UID" == "6" ]] ; then
+    auditor="onetouch"
+  fi
+  if [[ "$auditor" == "mini.py" ]] ; then
     echo "USING $auditor"
+    auditor="mini.py --output $WORK_BASE/sugars.txt"
   else
     echo "using insulaudit?"
+    auditor="insulaudit"
+    args="onetouch --port $VMODEM --output $WORK_BASE/sugars.txt sugars"
   fi
   #auditor="insulaudit"
   #args="mini --port $VMODEM hello"
@@ -25,7 +31,8 @@ if [[ -a $VMODEM ]] ; then
   #insulaudit onetouch --port $VMODEM hello 
   echo $auditor $args;
   # insulaudit onetouch --port $VMODEM sugars
-  ${auditor} $args | tee $WORK_BASE/sugars.txt
+  ${auditor} $args
+  # | tee $WORK_BASE/sugars.txt
   ) 2>&1 | tee $WORK_LOCAL/incoming.log
   DATA_URL=$(read_config registration.dataurl)
   curl --form userfile=@$WORK_BASE/sugars.txt --form submit=sugars $DATA_URL
